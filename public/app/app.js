@@ -101,6 +101,20 @@ function formatDistance(km) {
   return km < 1 ? Math.round(km * 1000) + ' m' : formatNumber(km, 1) + ' km';
 }
 
+var EARTH_RADIUS_KM = 6371;
+
+function distanceInKm(from, to) {
+  var toRad = function (degrees) {
+    return (degrees * Math.PI) / 180;
+  };
+  var dLat = toRad(to.latitude - from.latitude);
+  var dLng = toRad(to.longitude - from.longitude);
+  var a =
+    Math.pow(Math.sin(dLat / 2), 2) +
+    Math.cos(toRad(from.latitude)) * Math.cos(toRad(to.latitude)) * Math.pow(Math.sin(dLng / 2), 2);
+  return EARTH_RADIUS_KM * 2 * Math.asin(Math.sqrt(a));
+}
+
 /* ------------------------------------------------------------ placeholders */
 
 var GLYPHS = [
@@ -806,8 +820,56 @@ function render() {
     (state.radius ? ' · Umkreis ' + state.radius + ' km' : '');
 }
 
+/**
+ * Demo mode: when the page ships its own venues (window.VENUE_DATA) the app
+ * runs without a backend and does the filtering and distance maths itself.
+ */
+function loadFromEmbeddedData() {
+  var needle = state.search.toLowerCase();
+
+  state.venues = window.VENUE_DATA.map(function (venue) {
+    return {
+      ...venue,
+      distanceKm: Math.round(distanceInKm(state.location, venue) * 100) / 100,
+    };
+  })
+    .filter(function (venue) {
+      if (state.kind !== 'all' && venue.kind !== state.kind) {
+        return false;
+      }
+      if (state.radius && venue.distanceKm > Number(state.radius)) {
+        return false;
+      }
+      if (!needle) {
+        return true;
+      }
+      return [venue.name, venue.cuisine, venue.district, venue.city, venue.shortDescription].some(
+        function (field) {
+          return String(field || '').toLowerCase().indexOf(needle) !== -1;
+        }
+      );
+    })
+    .sort(function (a, b) {
+      return a.distanceKm - b.distanceKm;
+    });
+
+  state.loading = false;
+  collectAreas(window.VENUE_DATA);
+  render();
+
+  var hash = window.location.hash.match(/^#\/venue\/(.+)$/);
+  if (hash && !state.openSlug) {
+    openDetail(hash[1], true);
+  }
+}
+
 function load() {
   state.loading = true;
+
+  if (window.VENUE_DATA) {
+    return loadFromEmbeddedData();
+  }
+
   render();
 
   return fetch(API + '/nearby?' + buildQuery(), { headers: { Accept: 'application/json' } })
@@ -846,11 +908,14 @@ function load() {
  * data, so the app stays usable when the browser denies geolocation.
  */
 function collectAreas(venues) {
-  if (state.areas.length) {
-    return;
-  }
-
   var seen = {};
+
+  state.areas.forEach(function (area) {
+    seen[area.label] = area;
+  });
+
+  var known = state.areas.length;
+
   venues.forEach(function (venue) {
     var label = [venue.district, venue.city].filter(Boolean).join(', ');
     if (label && !seen[label]) {
@@ -864,15 +929,28 @@ function collectAreas(venues) {
       return seen[key];
     });
 
+  // Nothing new, so the current selection stays untouched.
+  if (state.areas.length === known) {
+    return;
+  }
+
+  var selected = state.areas.indexOf(
+    state.areas.filter(function (area) {
+      return area.label === state.location.label;
+    })[0]
+  );
+
   el.area.innerHTML =
     '<option value="">' +
-    escapeHtml(state.location.label) +
+    escapeHtml(DEFAULT_LOCATION.label) +
     '</option>' +
     state.areas
       .map(function (area, index) {
         return '<option value="' + index + '">' + escapeHtml(area.label) + '</option>';
       })
       .join('');
+
+  el.area.value = selected === -1 ? '' : String(selected);
 }
 
 /* ------------------------------------------------------------------ events */

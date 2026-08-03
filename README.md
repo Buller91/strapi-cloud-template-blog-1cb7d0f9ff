@@ -73,6 +73,19 @@ App dieses Bild.
 Die App liegt als statische Dateien unter `public/app/` (`index.html`, `app.css`, `app.js`)
 und braucht keinen Build-Schritt.
 
+## Demo-Datei ohne Backend
+
+`http://localhost:1337/app` ist nur lokal erreichbar. Für eine Version zum Weitergeben
+lässt sich die App als einzelne HTML-Datei bauen – Markup, Styles, Skript und die
+Beispiel-Locations in einem File, ganz ohne Strapi:
+
+```
+node scripts/build-demo.js ./venue-app.html
+```
+
+Die App erkennt den Demo-Modus an `window.VENUE_DATA` und rechnet Entfernungen und Filter
+dann selbst, statt `/api/venues/nearby` aufzurufen.
+
 ---
 
 # 🚀 Getting started with Strapi
