@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_venue_opening_hours",
+  "info": {
+    "displayName": "Opening Hour",
+    "icon": "clock",
+    "description": "Opening hours for a single weekday"
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "enumeration",
+      "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "required": true
+    },
+    "opens": {
+      "type": "string",
+      "description": "24h format, e.g. 18:00"
+    },
+    "closes": {
+      "type": "string",
+      "description": "24h format, e.g. 02:00 (may be past midnight)"
+    },
+    "closed": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

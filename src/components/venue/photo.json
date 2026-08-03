@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_venue_photos",
+  "info": {
+    "displayName": "Photo",
+    "icon": "picture",
+    "description": "A picture of the food, the drinks or the venue itself"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["food", "drink", "venue"],
+      "default": "food",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageUrl": {
+      "type": "string",
+      "description": "Used when no image has been uploaded"
+    }
+  }
+}

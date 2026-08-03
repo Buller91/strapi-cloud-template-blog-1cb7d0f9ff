@@ -1,0 +1,882 @@
+{
+  "venues": [
+    {
+      "name": "Trattoria Bella Nonna",
+      "slug": "trattoria-bella-nonna",
+      "kind": "restaurant",
+      "cuisine": "Italienisch",
+      "shortDescription": "Handgemachte Pasta und Holzofenpizza in einer kleinen Trattoria mit Innenhof.",
+      "description": "Familiengeführte Trattoria in Mitte. Die Pasta wird jeden Morgen frisch gemacht, der Holzofen läuft ab 17 Uhr. Im Sommer sitzt man im begrünten Innenhof, im Winter an langen Holztischen neben der offenen Küche.",
+      "address": "Auguststraße 42",
+      "postalCode": "10119",
+      "city": "Berlin",
+      "district": "Mitte",
+      "country": "DE",
+      "latitude": 52.5265,
+      "longitude": 13.4008,
+      "phone": "+49 30 24000101",
+      "email": "ciao@bella-nonna.example",
+      "website": "https://bella-nonna.example",
+      "reservationUrl": "https://bella-nonna.example/reservierung",
+      "priceLevel": 2,
+      "averagePrice": 28.5,
+      "currency": "EUR",
+      "rating": 4.6,
+      "reviewCount": 842,
+      "features": ["Innenhof", "Vegetarisch", "Familienfreundlich", "Reservierung möglich"],
+      "socials": {
+        "instagram": "https://instagram.com/bellanonna.berlin",
+        "facebook": "https://facebook.com/bellanonna.berlin",
+        "tiktok": "https://tiktok.com/@bellanonna.berlin"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "opens": "17:00", "closes": "23:00" },
+        { "day": "wednesday", "opens": "17:00", "closes": "23:00" },
+        { "day": "thursday", "opens": "17:00", "closes": "23:00" },
+        { "day": "friday", "opens": "17:00", "closes": "00:30" },
+        { "day": "saturday", "opens": "12:00", "closes": "00:30" },
+        { "day": "sunday", "opens": "12:00", "closes": "22:00" }
+      ],
+      "photos": [
+        { "caption": "Pizza Margherita aus dem Holzofen", "kind": "food" },
+        { "caption": "Tagliatelle al Tartufo", "kind": "food" },
+        { "caption": "Hausgemachter Limoncello", "kind": "drink" },
+        { "caption": "Innenhof am Abend", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Bruschetta Classica", "description": "Tomate, Basilikum, Knoblauch", "price": 7.5, "kind": "food", "section": "Vorspeisen" },
+        { "name": "Vitello Tonnato", "description": "Kalb, Thunfischcreme, Kapern", "price": 12.9, "kind": "food", "section": "Vorspeisen" },
+        { "name": "Pizza Margherita", "description": "San-Marzano-Tomaten, Büffelmozzarella", "price": 11.5, "kind": "food", "section": "Pizza", "popular": true },
+        { "name": "Pizza Diavola", "description": "Scharfe Salami, Chili, Oliven", "price": 14.0, "kind": "food", "section": "Pizza" },
+        { "name": "Tagliatelle al Tartufo", "description": "Frische Pasta, Trüffel, Parmesan", "price": 19.5, "kind": "food", "section": "Pasta", "popular": true },
+        { "name": "Tiramisu della Casa", "price": 7.0, "kind": "food", "section": "Dessert" },
+        { "name": "Aperol Spritz", "price": 8.5, "kind": "drink", "section": "Aperitivo" },
+        { "name": "Chianti Classico, 0,2 l", "price": 7.9, "kind": "drink", "section": "Wein" },
+        { "name": "Espresso", "price": 2.4, "kind": "drink", "section": "Kaffee" }
+      ],
+      "reviews": [
+        { "author": "Marie K.", "rating": 5, "comment": "Beste Pasta, die ich in Berlin gegessen habe. Der Trüffel ist kein Aroma-Öl, sondern echt.", "date": "2026-06-14", "source": "Google" },
+        { "author": "Tobias R.", "rating": 4, "comment": "Sehr gute Pizza, aber ohne Reservierung wartet man am Wochenende gut 40 Minuten.", "date": "2026-05-28", "source": "Tripadvisor" },
+        { "author": "Anja P.", "rating": 5, "comment": "Der Innenhof ist ein Traum. Personal super freundlich, faire Preise.", "date": "2026-04-02", "source": "App" }
+      ]
+    },
+    {
+      "name": "Kombüse 12",
+      "slug": "kombuese-12",
+      "kind": "restaurant",
+      "cuisine": "Nordisch, Fisch",
+      "shortDescription": "Nordische Küche mit wechselnder Tageskarte, direkt am Wasser.",
+      "description": "Kleines Restaurant mit offener Küche und täglich wechselnder Karte, die sich nach dem Fang richtet. Fokus auf Fisch, fermentiertes Gemüse und Sauerteigbrot aus eigener Backstube.",
+      "address": "Holzmarktstraße 12",
+      "postalCode": "10179",
+      "city": "Berlin",
+      "district": "Mitte",
+      "country": "DE",
+      "latitude": 52.5122,
+      "longitude": 13.4265,
+      "phone": "+49 30 24000202",
+      "email": "hallo@kombuese12.example",
+      "website": "https://kombuese12.example",
+      "reservationUrl": "https://kombuese12.example/tisch",
+      "priceLevel": 3,
+      "averagePrice": 52.0,
+      "currency": "EUR",
+      "rating": 4.8,
+      "reviewCount": 391,
+      "features": ["Wasserblick", "Tagesmenü", "Glutenfreie Optionen", "Reservierung empfohlen"],
+      "socials": {
+        "instagram": "https://instagram.com/kombuese12",
+        "facebook": "https://facebook.com/kombuese12"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "closed": true },
+        { "day": "wednesday", "opens": "18:00", "closes": "23:00" },
+        { "day": "thursday", "opens": "18:00", "closes": "23:00" },
+        { "day": "friday", "opens": "18:00", "closes": "23:30" },
+        { "day": "saturday", "opens": "18:00", "closes": "23:30" },
+        { "day": "sunday", "opens": "12:00", "closes": "16:00" }
+      ],
+      "photos": [
+        { "caption": "Gebeizter Saibling mit Dill", "kind": "food" },
+        { "caption": "Sauerteigbrot mit Algenbutter", "kind": "food" },
+        { "caption": "Alkoholfreier Sanddorn-Spritz", "kind": "drink" },
+        { "caption": "Blick auf die Spree", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Sauerteigbrot & Algenbutter", "price": 6.0, "kind": "food", "section": "Zum Start" },
+        { "name": "Gebeizter Saibling", "description": "Dill, Gurke, Buttermilch", "price": 18.0, "kind": "food", "section": "Kalt", "popular": true },
+        { "name": "Dorsch auf Erbsenpüree", "description": "Beurre blanc, Fenchel", "price": 31.0, "kind": "food", "section": "Warm", "popular": true },
+        { "name": "Tagesmenü, 5 Gänge", "price": 79.0, "kind": "food", "section": "Menü" },
+        { "name": "Weinbegleitung, 5 Gläser", "price": 49.0, "kind": "drink", "section": "Menü" },
+        { "name": "Sanddorn-Spritz, alkoholfrei", "price": 7.5, "kind": "drink", "section": "Aperitif" },
+        { "name": "Riesling trocken, 0,1 l", "price": 6.5, "kind": "drink", "section": "Wein" }
+      ],
+      "reviews": [
+        { "author": "Lena S.", "rating": 5, "comment": "Jeder Gang durchdacht, ohne abgehoben zu sein. Die Algenbutter allein ist die Anfahrt wert.", "date": "2026-07-01", "source": "Google" },
+        { "author": "Frank M.", "rating": 5, "comment": "Beste Fischküche der Stadt. Preis ist gehoben, aber die Qualität stimmt.", "date": "2026-06-11", "source": "App" },
+        { "author": "Nora B.", "rating": 4, "comment": "Sehr laut, wenn voll. Essen top, Akustik nicht.", "date": "2026-03-19", "source": "Tripadvisor" }
+      ]
+    },
+    {
+      "name": "Sofra Kreuzberg",
+      "slug": "sofra-kreuzberg",
+      "kind": "restaurant",
+      "cuisine": "Türkisch, Mezze",
+      "shortDescription": "Mezze, Lahmacun und Grill vom Holzkohlefeuer, bis spät geöffnet.",
+      "description": "Lauter, voller Klassiker am Kottbusser Damm. Große Mezze-Auswahl, alles zum Teilen, dazu Grillgerichte vom Holzkohlefeuer. Küche bis 1 Uhr nachts.",
+      "address": "Kottbusser Damm 78",
+      "postalCode": "10967",
+      "city": "Berlin",
+      "district": "Kreuzberg",
+      "country": "DE",
+      "latitude": 52.4924,
+      "longitude": 13.4213,
+      "phone": "+49 30 24000303",
+      "email": "info@sofra-kreuzberg.example",
+      "website": "https://sofra-kreuzberg.example",
+      "priceLevel": 1,
+      "averagePrice": 19.0,
+      "currency": "EUR",
+      "rating": 4.4,
+      "reviewCount": 2137,
+      "features": ["Späte Küche", "Vegan", "Große Gruppen", "Take Away"],
+      "socials": {
+        "instagram": "https://instagram.com/sofra.kreuzberg",
+        "tiktok": "https://tiktok.com/@sofra.kreuzberg",
+        "whatsapp": "https://wa.me/493024000303"
+      },
+      "openingHours": [
+        { "day": "monday", "opens": "11:00", "closes": "01:00" },
+        { "day": "tuesday", "opens": "11:00", "closes": "01:00" },
+        { "day": "wednesday", "opens": "11:00", "closes": "01:00" },
+        { "day": "thursday", "opens": "11:00", "closes": "01:00" },
+        { "day": "friday", "opens": "11:00", "closes": "02:00" },
+        { "day": "saturday", "opens": "11:00", "closes": "02:00" },
+        { "day": "sunday", "opens": "11:00", "closes": "01:00" }
+      ],
+      "photos": [
+        { "caption": "Gemischte Mezze-Platte", "kind": "food" },
+        { "caption": "Adana Kebap vom Holzkohlegrill", "kind": "food" },
+        { "caption": "Ayran, hausgemacht", "kind": "drink" },
+        { "caption": "Der Grillbereich", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Mezze-Platte für 2", "description": "Acht kalte Vorspeisen, Fladenbrot", "price": 16.5, "kind": "food", "section": "Mezze", "popular": true },
+        { "name": "Sigara Börek", "price": 5.5, "kind": "food", "section": "Mezze" },
+        { "name": "Lahmacun", "price": 5.0, "kind": "food", "section": "Ofen", "popular": true },
+        { "name": "Adana Kebap", "description": "Mit Bulgur, Salat, Joghurt", "price": 14.5, "kind": "food", "section": "Grill" },
+        { "name": "Gegrilltes Gemüse mit Hummus", "price": 11.0, "kind": "food", "section": "Vegan" },
+        { "name": "Künefe", "price": 6.5, "kind": "food", "section": "Dessert" },
+        { "name": "Ayran, 0,3 l", "price": 3.0, "kind": "drink", "section": "Alkoholfrei" },
+        { "name": "Efes vom Fass, 0,5 l", "price": 4.5, "kind": "drink", "section": "Bier" },
+        { "name": "Türkischer Mokka", "price": 2.8, "kind": "drink", "section": "Kaffee" }
+      ],
+      "reviews": [
+        { "author": "Deniz A.", "rating": 5, "comment": "Preis-Leistung unschlagbar. Die Mezze-Platte reicht locker für drei.", "date": "2026-07-20", "source": "Google" },
+        { "author": "Julia W.", "rating": 4, "comment": "Essen sehr gut, Service hektisch. Aber dafür kommt man ja auch nicht.", "date": "2026-06-30", "source": "Google" },
+        { "author": "Sami H.", "rating": 4, "comment": "Um 0:30 noch warm essen und es schmeckt trotzdem frisch. Genau richtig.", "date": "2026-05-05", "source": "App" }
+      ]
+    },
+    {
+      "name": "Green Fork",
+      "slug": "green-fork",
+      "kind": "restaurant",
+      "cuisine": "Vegan, Bowls",
+      "shortDescription": "Vollständig pflanzliche Küche mit Bowls, Sauerteig und Bio-Weinen.",
+      "description": "Helles Lokal in Prenzlauer Berg mit rein pflanzlicher Karte. Alles wird im Haus fermentiert, gebacken und eingelegt. Mittags Bowls, abends kleine Teller.",
+      "address": "Kastanienallee 61",
+      "postalCode": "10119",
+      "city": "Berlin",
+      "district": "Prenzlauer Berg",
+      "country": "DE",
+      "latitude": 52.5378,
+      "longitude": 13.4102,
+      "phone": "+49 30 24000404",
+      "email": "hey@greenfork.example",
+      "website": "https://greenfork.example",
+      "reservationUrl": "https://greenfork.example/booking",
+      "priceLevel": 2,
+      "averagePrice": 24.0,
+      "currency": "EUR",
+      "rating": 4.5,
+      "reviewCount": 654,
+      "features": ["100 % vegan", "Bio", "Hunde erlaubt", "Terrasse"],
+      "socials": {
+        "instagram": "https://instagram.com/greenfork.berlin",
+        "tiktok": "https://tiktok.com/@greenfork.berlin",
+        "youtube": "https://youtube.com/@greenfork"
+      },
+      "openingHours": [
+        { "day": "monday", "opens": "11:30", "closes": "22:00" },
+        { "day": "tuesday", "opens": "11:30", "closes": "22:00" },
+        { "day": "wednesday", "opens": "11:30", "closes": "22:00" },
+        { "day": "thursday", "opens": "11:30", "closes": "22:00" },
+        { "day": "friday", "opens": "11:30", "closes": "23:00" },
+        { "day": "saturday", "opens": "10:00", "closes": "23:00" },
+        { "day": "sunday", "opens": "10:00", "closes": "18:00" }
+      ],
+      "photos": [
+        { "caption": "Miso-Bowl mit geröstetem Kürbis", "kind": "food" },
+        { "caption": "Sauerteig mit Cashew-Ricotta", "kind": "food" },
+        { "caption": "Matcha Latte mit Hafermilch", "kind": "drink" },
+        { "caption": "Terrasse an der Kastanienallee", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Miso-Bowl", "description": "Kürbis, Quinoa, Edamame, Sesam", "price": 14.5, "kind": "food", "section": "Bowls", "popular": true },
+        { "name": "Green Bowl", "description": "Brokkoli, Avocado, Kichererbsen", "price": 13.5, "kind": "food", "section": "Bowls" },
+        { "name": "Sauerteig & Cashew-Ricotta", "price": 9.0, "kind": "food", "section": "Kleine Teller" },
+        { "name": "Blumenkohl aus dem Ofen", "description": "Tahini, Granatapfel", "price": 12.0, "kind": "food", "section": "Kleine Teller", "popular": true },
+        { "name": "Schoko-Mousse aus Aquafaba", "price": 6.5, "kind": "food", "section": "Dessert" },
+        { "name": "Matcha Latte", "price": 4.8, "kind": "drink", "section": "Kaffee & Tee" },
+        { "name": "Naturwein, 0,15 l", "price": 7.0, "kind": "drink", "section": "Wein" },
+        { "name": "Ingwer-Limonade, hausgemacht", "price": 4.2, "kind": "drink", "section": "Alkoholfrei" }
+      ],
+      "reviews": [
+        { "author": "Paul E.", "rating": 5, "comment": "Auch als Nicht-Veganer: der Blumenkohl ist besser als die meisten Steaks.", "date": "2026-07-08", "source": "Google" },
+        { "author": "Miriam T.", "rating": 4, "comment": "Sehr lecker, Portionen mittags etwas klein für den Preis.", "date": "2026-06-02", "source": "App" },
+        { "author": "Chris L.", "rating": 5, "comment": "Perfekt zum Arbeiten am Vormittag, ab 12 wird es voll.", "date": "2026-02-27", "source": "Google" }
+      ]
+    },
+    {
+      "name": "Ramen Kappa",
+      "slug": "ramen-kappa",
+      "kind": "restaurant",
+      "cuisine": "Japanisch, Ramen",
+      "shortDescription": "Tonkotsu und Shoyu Ramen, 18 Stunden gekochte Brühe, kein Tisch für mehr als vier.",
+      "description": "Winziger Ramen-Laden in Charlottenburg mit neun Plätzen an der Theke und drei Tischen. Die Brühe köchelt 18 Stunden, die Nudeln kommen frisch aus der eigenen Maschine.",
+      "address": "Kantstraße 118",
+      "postalCode": "10627",
+      "city": "Berlin",
+      "district": "Charlottenburg",
+      "country": "DE",
+      "latitude": 52.5055,
+      "longitude": 13.3061,
+      "phone": "+49 30 24000505",
+      "email": "kontakt@ramen-kappa.example",
+      "website": "https://ramen-kappa.example",
+      "priceLevel": 2,
+      "averagePrice": 21.0,
+      "currency": "EUR",
+      "rating": 4.7,
+      "reviewCount": 1189,
+      "features": ["Thekenplätze", "Keine Reservierung", "Vegetarische Brühe", "Barrierefrei"],
+      "socials": {
+        "instagram": "https://instagram.com/ramenkappa",
+        "x": "https://x.com/ramenkappa"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "opens": "12:00", "closes": "15:00" },
+        { "day": "wednesday", "opens": "12:00", "closes": "22:00" },
+        { "day": "thursday", "opens": "12:00", "closes": "22:00" },
+        { "day": "friday", "opens": "12:00", "closes": "23:00" },
+        { "day": "saturday", "opens": "12:00", "closes": "23:00" },
+        { "day": "sunday", "opens": "13:00", "closes": "21:00" }
+      ],
+      "photos": [
+        { "caption": "Tonkotsu Ramen mit Chashu", "kind": "food" },
+        { "caption": "Gyoza, hausgemacht", "kind": "food" },
+        { "caption": "Kaltes Asahi", "kind": "drink" },
+        { "caption": "Die Theke", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Tonkotsu Ramen", "description": "Schweinebrühe, Chashu, Ei, Frühlingszwiebel", "price": 15.5, "kind": "food", "section": "Ramen", "popular": true },
+        { "name": "Shoyu Ramen", "description": "Hühnerbrühe, Sojasauce, Menma", "price": 14.5, "kind": "food", "section": "Ramen" },
+        { "name": "Veggie Ramen", "description": "Pilzbrühe, Tofu, Mais", "price": 14.0, "kind": "food", "section": "Ramen" },
+        { "name": "Gyoza, 5 Stück", "price": 7.5, "kind": "food", "section": "Kleinigkeiten", "popular": true },
+        { "name": "Edamame", "price": 4.5, "kind": "food", "section": "Kleinigkeiten" },
+        { "name": "Extra Chashu", "price": 4.0, "kind": "food", "section": "Extras" },
+        { "name": "Asahi, 0,33 l", "price": 4.9, "kind": "drink", "section": "Bier" },
+        { "name": "Grüner Tee", "price": 3.2, "kind": "drink", "section": "Tee" }
+      ],
+      "reviews": [
+        { "author": "Yuki N.", "rating": 5, "comment": "Endlich Ramen, das nicht nach Suppenwürfel schmeckt. Brühe hat echte Tiefe.", "date": "2026-07-25", "source": "Google" },
+        { "author": "Hanna D.", "rating": 5, "comment": "Warten muss man immer, es lohnt sich immer.", "date": "2026-06-17", "source": "App" },
+        { "author": "Mark V.", "rating": 4, "comment": "Sehr eng, man sitzt praktisch beim Nachbarn mit am Tisch.", "date": "2026-04-21", "source": "Tripadvisor" }
+      ]
+    },
+    {
+      "name": "Café Herzstück",
+      "slug": "cafe-herzstueck",
+      "kind": "restaurant",
+      "cuisine": "Frühstück, Brunch",
+      "shortDescription": "Ganztags Frühstück, eigene Röstung und Kuchen aus der offenen Backstube.",
+      "description": "Frühstückscafé in Neukölln mit Röstanlage im Raum. Ganztägig Frühstück, mittags belegte Sauerteigbrote, nachmittags Kuchen. Am Wochenende ohne Reservierung schwer zu bekommen.",
+      "address": "Weserstraße 34",
+      "postalCode": "12047",
+      "city": "Berlin",
+      "district": "Neukölln",
+      "country": "DE",
+      "latitude": 52.4869,
+      "longitude": 13.4297,
+      "phone": "+49 30 24000606",
+      "email": "moin@herzstueck.example",
+      "website": "https://herzstueck.example",
+      "priceLevel": 2,
+      "averagePrice": 17.5,
+      "currency": "EUR",
+      "rating": 4.3,
+      "reviewCount": 978,
+      "features": ["Ganztags Frühstück", "Eigene Röstung", "WLAN", "Draußen sitzen"],
+      "socials": {
+        "instagram": "https://instagram.com/cafe.herzstueck",
+        "facebook": "https://facebook.com/cafe.herzstueck"
+      },
+      "openingHours": [
+        { "day": "monday", "opens": "08:00", "closes": "18:00" },
+        { "day": "tuesday", "opens": "08:00", "closes": "18:00" },
+        { "day": "wednesday", "opens": "08:00", "closes": "18:00" },
+        { "day": "thursday", "opens": "08:00", "closes": "18:00" },
+        { "day": "friday", "opens": "08:00", "closes": "18:00" },
+        { "day": "saturday", "opens": "09:00", "closes": "17:00" },
+        { "day": "sunday", "opens": "09:00", "closes": "17:00" }
+      ],
+      "photos": [
+        { "caption": "Frühstücksbrett für zwei", "kind": "food" },
+        { "caption": "Zimtschnecke aus der Backstube", "kind": "food" },
+        { "caption": "Filterkaffee aus eigener Röstung", "kind": "drink" },
+        { "caption": "Der Gastraum am Morgen", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Frühstücksbrett für 2", "description": "Käse, Aufstriche, Obst, Ei, Brot", "price": 26.0, "kind": "food", "section": "Frühstück", "popular": true },
+        { "name": "Rührei mit Kräutern", "price": 9.5, "kind": "food", "section": "Frühstück" },
+        { "name": "Avocado-Sauerteig", "price": 11.0, "kind": "food", "section": "Frühstück" },
+        { "name": "Zimtschnecke", "price": 4.2, "kind": "food", "section": "Backstube", "popular": true },
+        { "name": "Karottenkuchen", "price": 4.8, "kind": "food", "section": "Backstube" },
+        { "name": "Filterkaffee", "price": 3.5, "kind": "drink", "section": "Kaffee" },
+        { "name": "Flat White", "price": 4.2, "kind": "drink", "section": "Kaffee" },
+        { "name": "Frisch gepresster Orangensaft", "price": 4.9, "kind": "drink", "section": "Alkoholfrei" }
+      ],
+      "reviews": [
+        { "author": "Sophie G.", "rating": 5, "comment": "Der Kaffee ist auf Röstereiniveau, das Frühstücksbrett riesig.", "date": "2026-07-12", "source": "Google" },
+        { "author": "Ben O.", "rating": 3, "comment": "Sonntags 45 Minuten Wartezeit, danach 20 Minuten aufs Wasser. Essen war gut.", "date": "2026-06-22", "source": "Google" },
+        { "author": "Ilka F.", "rating": 5, "comment": "Meine Stammadresse zum Arbeiten unter der Woche.", "date": "2026-05-14", "source": "App" }
+      ]
+    },
+    {
+      "name": "Velvet Mule",
+      "slug": "velvet-mule",
+      "kind": "bar",
+      "cuisine": "Cocktailbar",
+      "shortDescription": "Klassische Cocktails, dunkles Holz, keine Karte – man sagt, was man mag.",
+      "description": "Speakeasy-artige Cocktailbar in Mitte. Es gibt keine feste Karte: Die Bartender fragen nach Vorlieben und mixen entsprechend. Eis wird im Haus geschlagen, die Sirupe selbst angesetzt.",
+      "address": "Torstraße 197",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "district": "Mitte",
+      "country": "DE",
+      "latitude": 52.5296,
+      "longitude": 13.3941,
+      "phone": "+49 30 24000707",
+      "email": "reservations@velvetmule.example",
+      "website": "https://velvetmule.example",
+      "reservationUrl": "https://velvetmule.example/reservieren",
+      "priceLevel": 3,
+      "averagePrice": 38.0,
+      "currency": "EUR",
+      "rating": 4.7,
+      "reviewCount": 512,
+      "features": ["Keine Karte", "Reservierung empfohlen", "Ab 21 Jahren", "Bargeldlos"],
+      "socials": {
+        "instagram": "https://instagram.com/velvetmule",
+        "facebook": "https://facebook.com/velvetmule"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "opens": "19:00", "closes": "02:00" },
+        { "day": "wednesday", "opens": "19:00", "closes": "02:00" },
+        { "day": "thursday", "opens": "19:00", "closes": "03:00" },
+        { "day": "friday", "opens": "19:00", "closes": "04:00" },
+        { "day": "saturday", "opens": "19:00", "closes": "04:00" },
+        { "day": "sunday", "opens": "19:00", "closes": "01:00" }
+      ],
+      "photos": [
+        { "caption": "Old Fashioned mit Klareis", "kind": "drink" },
+        { "caption": "Signature Sour", "kind": "drink" },
+        { "caption": "Oliven und Mandeln", "kind": "food" },
+        { "caption": "Die Bar aus Nussbaum", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Old Fashioned", "description": "Bourbon, Demerara, Bitters", "price": 15.0, "kind": "drink", "section": "Klassiker", "popular": true },
+        { "name": "Negroni", "price": 14.0, "kind": "drink", "section": "Klassiker" },
+        { "name": "Daiquiri", "price": 13.5, "kind": "drink", "section": "Klassiker" },
+        { "name": "Bartender's Choice", "description": "Nach deinen Vorlieben gemixt", "price": 16.0, "kind": "drink", "section": "Signature", "popular": true },
+        { "name": "Alkoholfreier Sour", "price": 11.0, "kind": "drink", "section": "Ohne Alkohol" },
+        { "name": "Oliven & Mandeln", "price": 6.0, "kind": "food", "section": "Snacks" },
+        { "name": "Käseteller", "price": 16.0, "kind": "food", "section": "Snacks" }
+      ],
+      "reviews": [
+        { "author": "Robert K.", "rating": 5, "comment": "Man sagt „rauchig, nicht zu süß“ und bekommt genau das. Große Klasse.", "date": "2026-07-18", "source": "Google" },
+        { "author": "Elif C.", "rating": 5, "comment": "Beste alkoholfreie Drinks der Stadt, kein Traubensaft-Ersatz.", "date": "2026-05-30", "source": "App" },
+        { "author": "Nils B.", "rating": 4, "comment": "Preise gehoben, aber handwerklich rechtfertigt sich das.", "date": "2026-04-09", "source": "Google" }
+      ]
+    },
+    {
+      "name": "Hopfenkiosk",
+      "slug": "hopfenkiosk",
+      "kind": "bar",
+      "cuisine": "Craft Beer",
+      "shortDescription": "24 Zapfhähne mit wechselnden Craft-Bieren, dazu Brezel und Toast.",
+      "description": "Unprätentiöse Bierbar in Friedrichshain. 24 Hähne, die Karte wechselt fast täglich, dazu rund 100 Flaschenbiere im Kühlschrank. Kleine Küche mit Brezeln, Toasts und Chili.",
+      "address": "Boxhagener Straße 76",
+      "postalCode": "10245",
+      "city": "Berlin",
+      "district": "Friedrichshain",
+      "country": "DE",
+      "latitude": 52.5108,
+      "longitude": 13.4637,
+      "phone": "+49 30 24000808",
+      "email": "prost@hopfenkiosk.example",
+      "website": "https://hopfenkiosk.example",
+      "priceLevel": 2,
+      "averagePrice": 22.0,
+      "currency": "EUR",
+      "rating": 4.5,
+      "reviewCount": 1342,
+      "features": ["24 Zapfhähne", "Hunde erlaubt", "Draußen sitzen", "Kartenzahlung"],
+      "socials": {
+        "instagram": "https://instagram.com/hopfenkiosk",
+        "facebook": "https://facebook.com/hopfenkiosk",
+        "x": "https://x.com/hopfenkiosk"
+      },
+      "openingHours": [
+        { "day": "monday", "opens": "16:00", "closes": "01:00" },
+        { "day": "tuesday", "opens": "16:00", "closes": "01:00" },
+        { "day": "wednesday", "opens": "16:00", "closes": "01:00" },
+        { "day": "thursday", "opens": "16:00", "closes": "02:00" },
+        { "day": "friday", "opens": "15:00", "closes": "03:00" },
+        { "day": "saturday", "opens": "14:00", "closes": "03:00" },
+        { "day": "sunday", "opens": "14:00", "closes": "00:00" }
+      ],
+      "photos": [
+        { "caption": "Flight mit vier Bieren", "kind": "drink" },
+        { "caption": "IPA frisch gezapft", "kind": "drink" },
+        { "caption": "Laugenbrezel mit Obatzda", "kind": "food" },
+        { "caption": "Die Zapfwand", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Tasting Flight, 4 × 0,1 l", "price": 9.5, "kind": "drink", "section": "Bier", "popular": true },
+        { "name": "Hausbier Pale Ale, 0,3 l", "price": 4.5, "kind": "drink", "section": "Bier" },
+        { "name": "Wechsel-IPA, 0,3 l", "price": 5.2, "kind": "drink", "section": "Bier", "popular": true },
+        { "name": "Stout, 0,3 l", "price": 5.5, "kind": "drink", "section": "Bier" },
+        { "name": "Alkoholfreies Pale Ale, 0,33 l", "price": 4.2, "kind": "drink", "section": "Ohne Alkohol" },
+        { "name": "Laugenbrezel mit Obatzda", "price": 6.5, "kind": "food", "section": "Küche" },
+        { "name": "Chili sin Carne", "price": 9.0, "kind": "food", "section": "Küche" },
+        { "name": "Käsetoast", "price": 5.5, "kind": "food", "section": "Küche" }
+      ],
+      "reviews": [
+        { "author": "Timo S.", "rating": 5, "comment": "Personal erklärt jedes Bier, ohne belehrend zu sein. Flight ist der beste Einstieg.", "date": "2026-07-05", "source": "Google" },
+        { "author": "Katrin H.", "rating": 4, "comment": "Freitags brechend voll, draußen findet man aber meistens ein Plätzchen.", "date": "2026-06-08", "source": "App" },
+        { "author": "Olli P.", "rating": 5, "comment": "Karte ändert sich ständig, es wird nie langweilig.", "date": "2026-03-30", "source": "Google" }
+      ]
+    },
+    {
+      "name": "Bar Nocturna",
+      "slug": "bar-nocturna",
+      "kind": "bar",
+      "cuisine": "Weinbar",
+      "shortDescription": "Naturweine aus kleinen Betrieben, dazu Konserven und Käse.",
+      "description": "Schmale Weinbar in Schöneberg mit rund 200 Positionen, Schwerpunkt Naturwein aus Österreich, Frankreich und Georgien. Zum Wein gibt es hochwertige Konserven, Schinken und Käse.",
+      "address": "Goltzstraße 29",
+      "postalCode": "10781",
+      "city": "Berlin",
+      "district": "Schöneberg",
+      "country": "DE",
+      "latitude": 52.4924,
+      "longitude": 13.3495,
+      "phone": "+49 30 24000909",
+      "email": "salut@barnocturna.example",
+      "website": "https://barnocturna.example",
+      "priceLevel": 3,
+      "averagePrice": 34.0,
+      "currency": "EUR",
+      "rating": 4.6,
+      "reviewCount": 407,
+      "features": ["Naturwein", "Weinverkauf", "Kleine Karte", "Ruhig"],
+      "socials": {
+        "instagram": "https://instagram.com/bar.nocturna",
+        "whatsapp": "https://wa.me/493024000909"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "opens": "18:00", "closes": "00:00" },
+        { "day": "wednesday", "opens": "18:00", "closes": "00:00" },
+        { "day": "thursday", "opens": "18:00", "closes": "01:00" },
+        { "day": "friday", "opens": "17:00", "closes": "02:00" },
+        { "day": "saturday", "opens": "17:00", "closes": "02:00" },
+        { "day": "sunday", "closed": true }
+      ],
+      "photos": [
+        { "caption": "Offener Naturwein im Glas", "kind": "drink" },
+        { "caption": "Vermouth auf Eis", "kind": "drink" },
+        { "caption": "Sardinen mit Brot", "kind": "food" },
+        { "caption": "Der Tresen", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Offener Weißwein, 0,1 l", "price": 6.5, "kind": "drink", "section": "Wein offen", "popular": true },
+        { "name": "Offener Orange Wine, 0,1 l", "price": 7.5, "kind": "drink", "section": "Wein offen" },
+        { "name": "Pét-Nat, Flasche", "price": 42.0, "kind": "drink", "section": "Flaschen" },
+        { "name": "Vermouth on the rocks", "price": 8.0, "kind": "drink", "section": "Aperitif" },
+        { "name": "Sardinen aus der Dose mit Brot", "price": 12.0, "kind": "food", "section": "Konserven", "popular": true },
+        { "name": "Käse, drei Sorten", "price": 14.0, "kind": "food", "section": "Teller" },
+        { "name": "Schinken, 60 g", "price": 13.0, "kind": "food", "section": "Teller" }
+      ],
+      "reviews": [
+        { "author": "Vera M.", "rating": 5, "comment": "Beratung ohne Weinsnobismus. Man bekommt genau das Glas, das man sucht.", "date": "2026-06-28", "source": "Google" },
+        { "author": "Jonas K.", "rating": 4, "comment": "Sehr klein, ab 21 Uhr steht man. Aber der Wein ist top.", "date": "2026-05-16", "source": "App" },
+        { "author": "Rana J.", "rating": 5, "comment": "Die Sardinen klingen banal und sind großartig.", "date": "2026-04-11", "source": "Tripadvisor" }
+      ]
+    },
+    {
+      "name": "Rooftop Neun",
+      "slug": "rooftop-neun",
+      "kind": "bar",
+      "cuisine": "Rooftop, Tapas",
+      "shortDescription": "Dachbar im neunten Stock mit Blick über die Stadt und Tapas-Karte.",
+      "description": "Bar auf dem Dach eines ehemaligen Verlagshauses. Rundumblick über Kreuzberg, im Winter mit Glasdach und Decken. Cocktails, Sekt und eine kleine Tapas-Karte.",
+      "address": "Ritterstraße 9",
+      "postalCode": "10969",
+      "city": "Berlin",
+      "district": "Kreuzberg",
+      "country": "DE",
+      "latitude": 52.5027,
+      "longitude": 13.4098,
+      "phone": "+49 30 24001010",
+      "email": "hello@rooftopneun.example",
+      "website": "https://rooftopneun.example",
+      "reservationUrl": "https://rooftopneun.example/tickets",
+      "priceLevel": 3,
+      "averagePrice": 41.0,
+      "currency": "EUR",
+      "rating": 4.2,
+      "reviewCount": 1866,
+      "features": ["Aussicht", "Sonnenuntergang", "Ganzjährig geöffnet", "Einlass ab 18"],
+      "socials": {
+        "instagram": "https://instagram.com/rooftopneun",
+        "tiktok": "https://tiktok.com/@rooftopneun",
+        "facebook": "https://facebook.com/rooftopneun"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "opens": "16:00", "closes": "00:00" },
+        { "day": "wednesday", "opens": "16:00", "closes": "00:00" },
+        { "day": "thursday", "opens": "16:00", "closes": "01:00" },
+        { "day": "friday", "opens": "15:00", "closes": "02:00" },
+        { "day": "saturday", "opens": "13:00", "closes": "02:00" },
+        { "day": "sunday", "opens": "13:00", "closes": "23:00" }
+      ],
+      "photos": [
+        { "caption": "Spritz zum Sonnenuntergang", "kind": "drink" },
+        { "caption": "Gin Tonic mit Rosmarin", "kind": "drink" },
+        { "caption": "Patatas Bravas", "kind": "food" },
+        { "caption": "Blick über die Dächer", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Rooftop Spritz", "price": 12.5, "kind": "drink", "section": "Signature", "popular": true },
+        { "name": "Gin Tonic", "price": 13.0, "kind": "drink", "section": "Longdrinks" },
+        { "name": "Crémant, 0,1 l", "price": 9.5, "kind": "drink", "section": "Schaumwein" },
+        { "name": "Alkoholfreier Sunset", "price": 9.0, "kind": "drink", "section": "Ohne Alkohol" },
+        { "name": "Patatas Bravas", "price": 8.5, "kind": "food", "section": "Tapas", "popular": true },
+        { "name": "Gambas al Ajillo", "price": 14.0, "kind": "food", "section": "Tapas" },
+        { "name": "Pan con Tomate", "price": 6.5, "kind": "food", "section": "Tapas" }
+      ],
+      "reviews": [
+        { "author": "Clara Z.", "rating": 5, "comment": "Der Blick zum Sonnenuntergang ist jeden Cent wert. Früh kommen!", "date": "2026-07-22", "source": "Google" },
+        { "author": "Dennis F.", "rating": 3, "comment": "Drinks solide, aber Touri-Preise und lange Schlange am Aufzug.", "date": "2026-06-19", "source": "Tripadvisor" },
+        { "author": "Ayse T.", "rating": 4, "comment": "Im Winter mit Decken überraschend gemütlich.", "date": "2026-01-24", "source": "App" }
+      ]
+    },
+    {
+      "name": "Zur Alten Linde",
+      "slug": "zur-alten-linde",
+      "kind": "bar",
+      "cuisine": "Eckkneipe",
+      "shortDescription": "Klassische Eckkneipe, Bier vom Fass, Kicker im Hinterzimmer.",
+      "description": "Kneipe im Wedding, seit 1974 in Familienhand. Bier, Korn, Kicker und ein Fernseher für Fußball. Bar bezahlen, keine Karte, kein Cocktailmenü.",
+      "address": "Malplaquetstraße 21",
+      "postalCode": "13347",
+      "city": "Berlin",
+      "district": "Wedding",
+      "country": "DE",
+      "latitude": 52.5497,
+      "longitude": 13.3599,
+      "phone": "+49 30 24001111",
+      "email": "kneipe@altelinde.example",
+      "priceLevel": 1,
+      "averagePrice": 12.0,
+      "currency": "EUR",
+      "rating": 4.4,
+      "reviewCount": 289,
+      "features": ["Nur Barzahlung", "Kicker", "Fußball", "Raucherbereich"],
+      "socials": {
+        "facebook": "https://facebook.com/altelinde.wedding"
+      },
+      "openingHours": [
+        { "day": "monday", "opens": "16:00", "closes": "02:00" },
+        { "day": "tuesday", "opens": "16:00", "closes": "02:00" },
+        { "day": "wednesday", "opens": "16:00", "closes": "02:00" },
+        { "day": "thursday", "opens": "16:00", "closes": "03:00" },
+        { "day": "friday", "opens": "15:00", "closes": "04:00" },
+        { "day": "saturday", "opens": "15:00", "closes": "04:00" },
+        { "day": "sunday", "opens": "16:00", "closes": "01:00" }
+      ],
+      "photos": [
+        { "caption": "Pils vom Fass", "kind": "drink" },
+        { "caption": "Korn und Bier", "kind": "drink" },
+        { "caption": "Soleier vom Tresen", "kind": "food" },
+        { "caption": "Der Tresen mit Kicker", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Pils, 0,3 l", "price": 3.2, "kind": "drink", "section": "Bier", "popular": true },
+        { "name": "Pils, 0,5 l", "price": 4.4, "kind": "drink", "section": "Bier" },
+        { "name": "Korn, 2 cl", "price": 2.0, "kind": "drink", "section": "Kurze" },
+        { "name": "Cola-Weizen, 0,5 l", "price": 4.6, "kind": "drink", "section": "Bier" },
+        { "name": "Soleier", "price": 1.5, "kind": "food", "section": "Vom Tresen", "popular": true },
+        { "name": "Bockwurst mit Brötchen", "price": 3.8, "kind": "food", "section": "Vom Tresen" }
+      ],
+      "reviews": [
+        { "author": "Werner L.", "rating": 5, "comment": "Ehrliche Kneipe, ehrliche Preise. So soll das sein.", "date": "2026-06-05", "source": "Google" },
+        { "author": "Steffi N.", "rating": 4, "comment": "Rauchig und laut, aber die Wirtin ist ein Original.", "date": "2026-05-02", "source": "Google" },
+        { "author": "Micha B.", "rating": 4, "comment": "Kicker ist immer besetzt, lohnt sich früh zu kommen.", "date": "2026-02-15", "source": "App" }
+      ]
+    },
+    {
+      "name": "Kesselhaus Club",
+      "slug": "kesselhaus-club",
+      "kind": "club",
+      "cuisine": "Techno",
+      "shortDescription": "Techno in einem alten Kesselhaus, zwei Floors, Freitag bis Sonntagmittag.",
+      "description": "Club in einem stillgelegten Industriegebäude in Friedrichshain. Hauptfloor mit Funktion-One-Anlage, kleinerer Floor für House und Disco, Hof zum Runterkommen. Ohne Fotos, Handykameras werden abgeklebt.",
+      "address": "Rüdersdorfer Straße 70",
+      "postalCode": "10243",
+      "city": "Berlin",
+      "district": "Friedrichshain",
+      "country": "DE",
+      "latitude": 52.5124,
+      "longitude": 13.4404,
+      "phone": "+49 30 24001212",
+      "email": "info@kesselhaus.example",
+      "website": "https://kesselhaus.example",
+      "reservationUrl": "https://kesselhaus.example/tickets",
+      "priceLevel": 2,
+      "averagePrice": 35.0,
+      "currency": "EUR",
+      "rating": 4.5,
+      "reviewCount": 3204,
+      "features": ["Zwei Floors", "Fotoverbot", "Ab 18", "Awareness-Team", "Garderobe"],
+      "socials": {
+        "instagram": "https://instagram.com/kesselhausclub",
+        "facebook": "https://facebook.com/kesselhausclub",
+        "youtube": "https://youtube.com/@kesselhausclub"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "closed": true },
+        { "day": "wednesday", "closed": true },
+        { "day": "thursday", "closed": true },
+        { "day": "friday", "opens": "23:00", "closes": "08:00" },
+        { "day": "saturday", "opens": "23:00", "closes": "12:00" },
+        { "day": "sunday", "opens": "22:00", "closes": "06:00" }
+      ],
+      "photos": [
+        { "caption": "Club Mate am Tresen", "kind": "drink" },
+        { "caption": "Vodka Mate", "kind": "drink" },
+        { "caption": "Pommes aus der Nachtküche", "kind": "food" },
+        { "caption": "Der Hauptfloor", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Eintritt Freitag", "price": 18.0, "kind": "drink", "section": "Eintritt", "popular": true },
+        { "name": "Eintritt Samstag", "price": 22.0, "kind": "drink", "section": "Eintritt" },
+        { "name": "Club Mate, 0,5 l", "price": 4.0, "kind": "drink", "section": "Bar" },
+        { "name": "Vodka Mate", "price": 9.0, "kind": "drink", "section": "Bar", "popular": true },
+        { "name": "Bier, 0,33 l", "price": 4.5, "kind": "drink", "section": "Bar" },
+        { "name": "Wasser, 0,5 l", "price": 2.5, "kind": "drink", "section": "Bar" },
+        { "name": "Pommes", "price": 5.0, "kind": "food", "section": "Nachtküche" },
+        { "name": "Garderobe", "price": 3.0, "kind": "drink", "section": "Eintritt" }
+      ],
+      "reviews": [
+        { "author": "Jan D.", "rating": 5, "comment": "Sound ist eine Wucht, Awareness-Team wirklich präsent. Türpolitik streng, aber fair.", "date": "2026-07-27", "source": "Google" },
+        { "author": "Lu M.", "rating": 4, "comment": "Samstagnacht 40 Minuten Schlange. Drin dann alles richtig.", "date": "2026-06-21", "source": "App" },
+        { "author": "Fabi W.", "rating": 5, "comment": "Zweiter Floor wird unterschätzt, dort läuft die bessere Musik.", "date": "2026-05-09", "source": "Google" }
+      ]
+    },
+    {
+      "name": "Neon Garden",
+      "slug": "neon-garden",
+      "kind": "club",
+      "cuisine": "House, Disco",
+      "shortDescription": "Open-Air-Floor im Garten, House und Disco, im Sommer ab nachmittags.",
+      "description": "Clubgelände am Kanal in Neukölln mit überdachtem Innenfloor und großem Garten. Von Mai bis September Open Air ab 15 Uhr, sonst nur der Innenraum. Musikalisch House, Disco und Funk.",
+      "address": "Lohmühlenstraße 8",
+      "postalCode": "12435",
+      "city": "Berlin",
+      "district": "Neukölln",
+      "country": "DE",
+      "latitude": 52.4934,
+      "longitude": 13.4478,
+      "phone": "+49 30 24001313",
+      "email": "crew@neongarden.example",
+      "website": "https://neongarden.example",
+      "reservationUrl": "https://neongarden.example/tickets",
+      "priceLevel": 2,
+      "averagePrice": 30.0,
+      "currency": "EUR",
+      "rating": 4.3,
+      "reviewCount": 1741,
+      "features": ["Open Air", "Am Wasser", "Ab 18", "Foodtruck", "Kartenzahlung"],
+      "socials": {
+        "instagram": "https://instagram.com/neongarden.berlin",
+        "tiktok": "https://tiktok.com/@neongarden.berlin",
+        "facebook": "https://facebook.com/neongarden.berlin"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "closed": true },
+        { "day": "wednesday", "closed": true },
+        { "day": "thursday", "opens": "20:00", "closes": "03:00" },
+        { "day": "friday", "opens": "18:00", "closes": "06:00" },
+        { "day": "saturday", "opens": "15:00", "closes": "06:00" },
+        { "day": "sunday", "opens": "15:00", "closes": "02:00" }
+      ],
+      "photos": [
+        { "caption": "Frozen Margarita", "kind": "drink" },
+        { "caption": "Aperol Spritz im Garten", "kind": "drink" },
+        { "caption": "Smashburger vom Foodtruck", "kind": "food" },
+        { "caption": "Der Garten bei Sonnenuntergang", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Eintritt Open Air, tagsüber", "price": 12.0, "kind": "drink", "section": "Eintritt", "popular": true },
+        { "name": "Eintritt Nacht", "price": 16.0, "kind": "drink", "section": "Eintritt" },
+        { "name": "Frozen Margarita", "price": 11.0, "kind": "drink", "section": "Bar", "popular": true },
+        { "name": "Aperol Spritz", "price": 9.5, "kind": "drink", "section": "Bar" },
+        { "name": "Bier, 0,33 l", "price": 4.5, "kind": "drink", "section": "Bar" },
+        { "name": "Limonade, 0,33 l", "price": 3.5, "kind": "drink", "section": "Bar" },
+        { "name": "Smashburger", "price": 11.0, "kind": "food", "section": "Foodtruck" },
+        { "name": "Halloumi-Wrap", "price": 9.5, "kind": "food", "section": "Foodtruck" }
+      ],
+      "reviews": [
+        { "author": "Mia R.", "rating": 5, "comment": "Sonntagnachmittag im Garten mit Disco – die beste Art, das Wochenende ausklingen zu lassen.", "date": "2026-07-26", "source": "Google" },
+        { "author": "Tarek Y.", "rating": 4, "comment": "Sound draußen etwas dünn, drinnen dafür richtig gut.", "date": "2026-06-14", "source": "App" },
+        { "author": "Svenja O.", "rating": 4, "comment": "Foodtruck rettet die Nacht. Burger ist ernsthaft gut.", "date": "2026-05-31", "source": "Google" }
+      ]
+    },
+    {
+      "name": "Studio 44",
+      "slug": "studio-44",
+      "kind": "club",
+      "cuisine": "Hip-Hop, R&B",
+      "shortDescription": "Hip-Hop, R&B und Afrobeats auf zwei Ebenen, Donnerstag bis Samstag.",
+      "description": "Club in Mitte mit Fokus auf Hip-Hop, R&B und Afrobeats. Untere Ebene mit Tanzfläche, obere Ebene mit Sitzgruppen und Tischreservierungen. Donnerstags Studentenpreise.",
+      "address": "Chausseestraße 44",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "district": "Mitte",
+      "country": "DE",
+      "latitude": 52.5335,
+      "longitude": 13.3796,
+      "phone": "+49 30 24001414",
+      "email": "booking@studio44.example",
+      "website": "https://studio44.example",
+      "reservationUrl": "https://studio44.example/tische",
+      "priceLevel": 3,
+      "averagePrice": 45.0,
+      "currency": "EUR",
+      "rating": 4.0,
+      "reviewCount": 923,
+      "features": ["Tischreservierung", "Ab 21", "Dresscode", "Garderobe"],
+      "socials": {
+        "instagram": "https://instagram.com/studio44.berlin",
+        "tiktok": "https://tiktok.com/@studio44.berlin",
+        "x": "https://x.com/studio44berlin"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "closed": true },
+        { "day": "wednesday", "closed": true },
+        { "day": "thursday", "opens": "22:00", "closes": "04:00" },
+        { "day": "friday", "opens": "23:00", "closes": "06:00" },
+        { "day": "saturday", "opens": "23:00", "closes": "06:00" },
+        { "day": "sunday", "closed": true }
+      ],
+      "photos": [
+        { "caption": "Flasche am Tisch mit Wunderkerzen", "kind": "drink" },
+        { "caption": "Signature Cocktail", "kind": "drink" },
+        { "caption": "Fingerfood für den Tisch", "kind": "food" },
+        { "caption": "Die untere Ebene", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Eintritt Donnerstag", "price": 10.0, "kind": "drink", "section": "Eintritt" },
+        { "name": "Eintritt Wochenende", "price": 20.0, "kind": "drink", "section": "Eintritt", "popular": true },
+        { "name": "Tischreservierung ab", "description": "Mindestverzehr pro Tisch", "price": 250.0, "kind": "drink", "section": "Tische" },
+        { "name": "Longdrink", "price": 12.0, "kind": "drink", "section": "Bar" },
+        { "name": "Flasche Vodka 0,7 l", "price": 180.0, "kind": "drink", "section": "Tische" },
+        { "name": "Softdrink", "price": 4.5, "kind": "drink", "section": "Bar" },
+        { "name": "Fingerfood-Platte", "price": 32.0, "kind": "food", "section": "Tische" }
+      ],
+      "reviews": [
+        { "author": "Kevin A.", "rating": 4, "comment": "Musik top, Preise happig. Donnerstag ist die beste Nacht.", "date": "2026-07-16", "source": "Google" },
+        { "author": "Nadia S.", "rating": 3, "comment": "Türsteher sehr willkürlich, drinnen aber gute Stimmung.", "date": "2026-06-27", "source": "Tripadvisor" },
+        { "author": "Leo H.", "rating": 5, "comment": "Bester Afrobeats-Floor der Stadt, DJ liest die Menge perfekt.", "date": "2026-04-18", "source": "App" }
+      ]
+    },
+    {
+      "name": "Bunker Nord",
+      "slug": "bunker-nord",
+      "kind": "club",
+      "cuisine": "Drum & Bass, Elektro",
+      "shortDescription": "Drum & Bass und Elektro in einem Hochbunker, kleiner Floor, große Anlage.",
+      "description": "Kleiner Clubraum in einem Hochbunker im Wedding. Ein Floor, harte Anlage, Programm zwischen Drum & Bass, Elektro und Breakbeat. Kein Handyverbot, aber Fotografieren auf dem Floor ist unerwünscht.",
+      "address": "Gerichtstraße 65",
+      "postalCode": "13347",
+      "city": "Berlin",
+      "district": "Wedding",
+      "country": "DE",
+      "latitude": 52.5459,
+      "longitude": 13.3705,
+      "phone": "+49 30 24001515",
+      "email": "mail@bunkernord.example",
+      "website": "https://bunkernord.example",
+      "priceLevel": 1,
+      "averagePrice": 24.0,
+      "currency": "EUR",
+      "rating": 4.6,
+      "reviewCount": 611,
+      "features": ["Ein Floor", "Nur Barzahlung", "Ab 18", "Ohrstöpsel an der Bar"],
+      "socials": {
+        "instagram": "https://instagram.com/bunkernord",
+        "youtube": "https://youtube.com/@bunkernord"
+      },
+      "openingHours": [
+        { "day": "monday", "closed": true },
+        { "day": "tuesday", "closed": true },
+        { "day": "wednesday", "closed": true },
+        { "day": "thursday", "closed": true },
+        { "day": "friday", "opens": "23:00", "closes": "07:00" },
+        { "day": "saturday", "opens": "23:00", "closes": "08:00" },
+        { "day": "sunday", "closed": true }
+      ],
+      "photos": [
+        { "caption": "Bier und Kurzer", "kind": "drink" },
+        { "caption": "Mate mit Eis", "kind": "drink" },
+        { "caption": "Toast von der Nachtbar", "kind": "food" },
+        { "caption": "Der Floor im Bunker", "kind": "venue" }
+      ],
+      "menu": [
+        { "name": "Eintritt", "price": 15.0, "kind": "drink", "section": "Eintritt", "popular": true },
+        { "name": "Bier, 0,33 l", "price": 4.0, "kind": "drink", "section": "Bar" },
+        { "name": "Mate, 0,5 l", "price": 3.5, "kind": "drink", "section": "Bar" },
+        { "name": "Kurzer", "price": 3.0, "kind": "drink", "section": "Bar" },
+        { "name": "Wasser, 0,5 l", "price": 2.0, "kind": "drink", "section": "Bar" },
+        { "name": "Käsetoast", "price": 4.5, "kind": "food", "section": "Nachtbar" },
+        { "name": "Ohrstöpsel", "price": 1.0, "kind": "drink", "section": "Bar" }
+      ],
+      "reviews": [
+        { "author": "Rina P.", "rating": 5, "comment": "Kleiner Raum, riesiger Sound. Wer D&B mag, ist hier richtig.", "date": "2026-07-11", "source": "Google" },
+        { "author": "Ole G.", "rating": 4, "comment": "Nur Bargeld, Automat ist zwei Straßen weiter. Vorher abheben!", "date": "2026-06-06", "source": "App" },
+        { "author": "Selin K.", "rating": 5, "comment": "Faire Preise, entspanntes Publikum, keine Poser.", "date": "2026-03-14", "source": "Google" }
+      ]
+    }
+  ]
+}

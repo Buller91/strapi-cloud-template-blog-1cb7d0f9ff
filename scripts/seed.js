@@ -4,6 +4,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
 const { categories, authors, articles, global, about } = require('../data/data.json');
+const { seedVenues } = require('./venues');
 
 async function seedExampleApp() {
   const shouldImportSeedData = await isFirstRun();
@@ -263,6 +264,7 @@ async function main() {
   app.log.level = 'error';
 
   await seedExampleApp();
+  await seedVenues();
   await app.destroy();
 
   process.exit(0);

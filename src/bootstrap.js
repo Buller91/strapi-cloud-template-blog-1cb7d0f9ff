@@ -4,6 +4,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
 const { categories, authors, articles, global, about } = require('../data/data.json');
+const { seedVenues } = require('../scripts/venues');
 
 async function seedExampleApp() {
   const shouldImportSeedData = await isFirstRun();
@@ -271,4 +272,6 @@ async function main() {
 
 module.exports = async () => {
   await seedExampleApp();
+  // Idempotent, so venues also show up in databases seeded before this feature.
+  await seedVenues();
 };

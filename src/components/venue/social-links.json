@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_venue_social_links",
+  "info": {
+    "displayName": "Social Links",
+    "icon": "instagram",
+    "description": "Social media profiles of a venue"
+  },
+  "options": {},
+  "attributes": {
+    "instagram": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "tiktok": {
+      "type": "string"
+    },
+    "x": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    }
+  }
+}

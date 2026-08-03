@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_venue_menu_items",
+  "info": {
+    "displayName": "Menu Item",
+    "icon": "priceTag",
+    "description": "A dish or a drink including its price"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "currency": {
+      "type": "string",
+      "default": "EUR"
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["food", "drink"],
+      "default": "food",
+      "required": true
+    },
+    "section": {
+      "type": "string",
+      "description": "e.g. Vorspeisen, Hauptgerichte, Cocktails"
+    },
+    "popular": {
+      "type": "boolean",
+      "default": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imageUrl": {
+      "type": "string"
+    }
+  }
+}

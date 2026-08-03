@@ -1,0 +1,141 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venues",
+  "info": {
+    "singularName": "venue",
+    "pluralName": "venues",
+    "displayName": "Venue",
+    "description": "Bars, restaurants and clubs including reviews, contact data, photos and prices"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["restaurant", "bar", "club"],
+      "required": true
+    },
+    "cuisine": {
+      "type": "string",
+      "description": "e.g. Italienisch, Cocktailbar, Techno"
+    },
+    "shortDescription": {
+      "type": "text",
+      "maxLength": 160
+    },
+    "description": {
+      "type": "text"
+    },
+    "address": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string",
+      "default": "DE"
+    },
+    "latitude": {
+      "type": "decimal",
+      "required": true
+    },
+    "longitude": {
+      "type": "decimal",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "website": {
+      "type": "string"
+    },
+    "reservationUrl": {
+      "type": "string"
+    },
+    "priceLevel": {
+      "type": "integer",
+      "min": 1,
+      "max": 4,
+      "default": 2,
+      "description": "1 = guenstig, 4 = gehoben"
+    },
+    "averagePrice": {
+      "type": "decimal",
+      "description": "Average price per person"
+    },
+    "currency": {
+      "type": "string",
+      "default": "EUR"
+    },
+    "rating": {
+      "type": "decimal",
+      "min": 0,
+      "max": 5
+    },
+    "reviewCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "features": {
+      "type": "json",
+      "description": "List of tags, e.g. [\"Terrasse\", \"Vegan\"]"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "photos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "venue.photo"
+    },
+    "menu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "venue.menu-item"
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": true,
+      "component": "venue.review"
+    },
+    "openingHours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "venue.opening-hour"
+    },
+    "socials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "venue.social-links"
+    }
+  }
+}
