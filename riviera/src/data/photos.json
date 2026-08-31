@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "note": "Written by scripts/index-photos.mjs. Keys are '<island>|<category>'. Empty means the app falls back to the generated plates in public/images.",
+    "generated": "2026-08-31T19:27:57.718Z"
+  },
+  "sets": {}
+}

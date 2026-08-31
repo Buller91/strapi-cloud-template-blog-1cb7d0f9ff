@@ -11,13 +11,6 @@ export function guestLanguage() {
 
 const ISLANDS = { mykonos: 'Mykonos', ibiza: 'Ibiza', 'st-tropez': 'St. Tropez' }
 
-/**
- * The model is never asked to echo an image path — it would invent one.
- * The plate is looked up from the inventory by the venue's own name.
- */
-export function imageFor(name, destination) {
-  return inventory.items.find((i) => i.insel === ISLANDS[destination] && i.name === name)?.image ?? null
-}
 
 /**
  * The model is told to copy venue names verbatim from the inventory. This

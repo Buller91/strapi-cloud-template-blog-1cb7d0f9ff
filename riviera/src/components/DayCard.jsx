@@ -2,7 +2,7 @@ import PlanItem from './PlanItem.jsx'
 import { formatDay } from '../lib/format.js'
 
 /** One card per day of the stay. */
-export default function DayCard({ date, items, index, isSelected, onToggle, locale, imageFor }) {
+export default function DayCard({ date, items, index, isSelected, onToggle, locale, visualFor }) {
   const chosen = items.filter((_, i) => isSelected(date, i)).length
 
   return (
@@ -24,7 +24,7 @@ export default function DayCard({ date, items, index, isSelected, onToggle, loca
         <PlanItem
           key={`${date}-${i}`}
           item={item}
-          image={imageFor(item.name)}
+          visual={visualFor(item.name)}
           selected={isSelected(date, i)}
           onToggle={() => onToggle(date, i)}
         />

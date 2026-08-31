@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import { requestItinerary, guestLanguage, imageFor } from '../lib/itinerary.js'
+import { requestItinerary, guestLanguage } from '../lib/itinerary.js'
+import { visualFor } from '../lib/images.js'
 import { sumEstimates } from '../lib/price.js'
 import { formatStay } from '../lib/format.js'
 import { destinations, budgetTiers } from '../data/destinations.js'
@@ -113,7 +114,7 @@ export default function Itinerary({ brief, onEdit, onRequest }) {
                 items={day.items}
                 index={index}
                 locale={locale}
-                imageFor={(name) => imageFor(name, brief.destination)}
+                visualFor={(name) => visualFor(name, brief.destination)}
                 isSelected={(date, i) => selected.has(keyOf(date, i))}
                 onToggle={toggle}
               />

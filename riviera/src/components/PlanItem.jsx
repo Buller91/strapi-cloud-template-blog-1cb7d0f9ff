@@ -2,7 +2,9 @@
  * One entry of the programme. The whole plate is the toggle, so the tap
  * target is the card rather than the small pill — the pill only shows state.
  */
-export default function PlanItem({ item, image, selected, onToggle }) {
+import Plate from './Plate.jsx'
+
+export default function PlanItem({ item, visual, selected, onToggle }) {
   return (
     <label
       className={[
@@ -19,19 +21,7 @@ export default function PlanItem({ item, image, selected, onToggle }) {
         aria-label={`Add to itinerary: ${item.name} at ${item.time}`}
       />
 
-      {image && (
-        <img
-          src={image}
-          alt=""
-          width="1200"
-          height="800"
-          loading="lazy"
-          className={[
-            'mb-5 block aspect-[16/7] w-full object-cover transition-opacity duration-300',
-            selected ? 'opacity-100' : 'opacity-45',
-          ].join(' ')}
-        />
-      )}
+      <Plate visual={visual} alt={item.name} dimmed={!selected} />
 
       <div className="grid grid-cols-[3.25rem_1fr] gap-x-4 sm:grid-cols-[4.5rem_1fr] sm:gap-x-6">
         <span className={['eyebrow pt-1.5 tabular-nums transition-colors duration-300', selected ? 'text-gold' : 'text-muted'].join(' ')}>
