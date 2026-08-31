@@ -69,7 +69,7 @@ export default function Itinerary({ brief, onEdit, onRequest }) {
   const total = useMemo(() => sumEstimates(chosen, brief.guests), [chosen, brief.guests])
 
   return (
-    <main className={`mx-auto max-w-2xl px-6 sm:px-10 ${state.status === 'ready' ? 'pb-44' : 'pb-32'}`}>
+    <main className={`mx-auto max-w-2xl px-6 sm:px-10 ${state.status === 'ready' ? 'pb-52' : 'pb-32'}`}>
       <header className="pt-14 sm:pt-24">
         <p className="eyebrow text-gold">Your programme</p>
 
