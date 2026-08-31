@@ -1,0 +1,341 @@
+{
+  "meta": {
+    "version": 1,
+    "currency": "EUR",
+    "updated": "2026-08-31",
+    "price_disclaimer": "All values in price_estimate are non-binding estimates compiled for planning purposes only. They are not quotes, are not sourced from the venues, and change by season, day of week and party size. Every booking is confirmed and priced by the Riviera concierge team.",
+    "preisniveau_scale": {
+      "1": "accessible for the destination",
+      "2": "premium",
+      "3": "top tier"
+    }
+  },
+  "items": [
+    {
+      "name": "Nammos",
+      "insel": "Mykonos",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "The island's most photographed beach club on Psarou, where lunch runs long and the champagne trolley never stops.",
+      "best_time": "13:00-19:00",
+      "price_estimate": "estimate: EUR 250-500 per person, sunbed minimum spend applies"
+    },
+    {
+      "name": "Scorpios",
+      "insel": "Mykonos",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "A ritual-driven day club above Paraga bay that builds from long-table lunch to a drummed sunset set.",
+      "best_time": "15:00-22:00",
+      "price_estimate": "estimate: EUR 200-400 per person"
+    },
+    {
+      "name": "Principote",
+      "insel": "Mykonos",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "Panormos bay's white-on-white terrace, known for a Greek kitchen that outperforms its party reputation.",
+      "best_time": "13:00-20:00",
+      "price_estimate": "estimate: EUR 180-350 per person"
+    },
+    {
+      "name": "Alemagou",
+      "insel": "Mykonos",
+      "kategorie": "beachclub",
+      "preisniveau": 2,
+      "beschreibung": "A bamboo-shaded Ftelia institution for guests who want the music without the bottle-parade.",
+      "best_time": "13:00-19:00",
+      "price_estimate": "estimate: EUR 120-250 per person"
+    },
+    {
+      "name": "Matsuhisa Mykonos",
+      "insel": "Mykonos",
+      "kategorie": "restaurant",
+      "preisniveau": 3,
+      "beschreibung": "Nobu Matsuhisa's terrace at Belvedere, still the reference point for sushi on the island.",
+      "best_time": "20:00-23:30",
+      "price_estimate": "estimate: EUR 180-300 per person"
+    },
+    {
+      "name": "Interni",
+      "insel": "Mykonos",
+      "kategorie": "restaurant",
+      "preisniveau": 2,
+      "beschreibung": "A courtyard restaurant in Chora that turns into one of the town's late bars after midnight.",
+      "best_time": "21:00-00:30",
+      "price_estimate": "estimate: EUR 90-160 per person"
+    },
+    {
+      "name": "Kastro's",
+      "insel": "Mykonos",
+      "kategorie": "restaurant",
+      "preisniveau": 2,
+      "beschreibung": "The classic Little Venice sunset table, best booked for the hour before the light goes.",
+      "best_time": "19:30-21:30",
+      "price_estimate": "estimate: EUR 80-140 per person"
+    },
+    {
+      "name": "Cavo Paradiso",
+      "insel": "Mykonos",
+      "kategorie": "club",
+      "preisniveau": 3,
+      "beschreibung": "A clifftop open-air club above Paradise beach that only makes sense after 2am.",
+      "best_time": "01:30-06:00",
+      "price_estimate": "estimate: EUR 80-120 entry, tables from EUR 1,500"
+    },
+    {
+      "name": "Void Club",
+      "insel": "Mykonos",
+      "kategorie": "club",
+      "preisniveau": 2,
+      "beschreibung": "A dark, sound-first room in Chora booking harder techno than the beach circuit.",
+      "best_time": "23:30-05:00",
+      "price_estimate": "estimate: EUR 40-80 entry, tables from EUR 800"
+    },
+    {
+      "name": "Delos & Rhenia Private Charter",
+      "insel": "Mykonos",
+      "kategorie": "yacht",
+      "preisniveau": 3,
+      "beschreibung": "A full-day motor yacht run to the Delos ruins and the swimming bays of Rhenia, crew and lunch aboard.",
+      "best_time": "10:00-18:00",
+      "price_estimate": "estimate: EUR 2,500-6,000 per day for the boat"
+    },
+    {
+      "name": "Mykonos Airport & Port Chauffeur",
+      "insel": "Mykonos",
+      "kategorie": "transfer",
+      "preisniveau": 2,
+      "beschreibung": "Private Mercedes V-Class with an English-speaking driver, meeting guests at the aircraft steps or ferry ramp.",
+      "best_time": "06:00-23:00",
+      "price_estimate": "estimate: EUR 90-200 per transfer"
+    },
+    {
+      "name": "Villa Hurmuses, Agios Lazaros",
+      "insel": "Mykonos",
+      "kategorie": "villa",
+      "preisniveau": 3,
+      "beschreibung": "A cliff-edge estate over Psarou with infinity pool, staff and the island's best-known private sunset terrace.",
+      "best_time": "16:00-20:00",
+      "price_estimate": "estimate: EUR 8,000-25,000 per night in high season"
+    },
+
+    {
+      "name": "Blue Marlin Ibiza",
+      "insel": "Ibiza",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "Cala Jondal's flagship day club, where the DJ programme and the yacht tenders arrive together.",
+      "best_time": "12:00-20:00",
+      "price_estimate": "estimate: EUR 200-400 per person, bed minimum spend applies"
+    },
+    {
+      "name": "Nikki Beach Ibiza",
+      "insel": "Ibiza",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "White beds and Sunday-brunch theatrics on Santa Eulalia's quieter east coast.",
+      "best_time": "12:00-19:00",
+      "price_estimate": "estimate: EUR 180-350 per person"
+    },
+    {
+      "name": "Beachouse Ibiza",
+      "insel": "Ibiza",
+      "kategorie": "beachclub",
+      "preisniveau": 2,
+      "beschreibung": "A relaxed Playa d'en Bossa terrace that works as the daytime warm-up before the big rooms open.",
+      "best_time": "11:00-19:00",
+      "price_estimate": "estimate: EUR 100-200 per person"
+    },
+    {
+      "name": "Experimental Beach",
+      "insel": "Ibiza",
+      "kategorie": "beachclub",
+      "preisniveau": 2,
+      "beschreibung": "A small salt-flats terrace near Ses Salines built around cocktails and the sunset, not the party.",
+      "best_time": "17:00-22:00",
+      "price_estimate": "estimate: EUR 90-180 per person"
+    },
+    {
+      "name": "Casa Jondal",
+      "insel": "Ibiza",
+      "kategorie": "restaurant",
+      "preisniveau": 3,
+      "beschreibung": "Barefoot beachfront dining on Cala Jondal with grilled fish priced by the kilo and a serious wine list.",
+      "best_time": "14:00-19:00",
+      "price_estimate": "estimate: EUR 150-280 per person"
+    },
+    {
+      "name": "Sa Punta",
+      "insel": "Ibiza",
+      "kategorie": "restaurant",
+      "preisniveau": 2,
+      "beschreibung": "A Talamanca terrace looking straight back at the illuminated Dalt Vila walls after dark.",
+      "best_time": "20:30-23:30",
+      "price_estimate": "estimate: EUR 90-160 per person"
+    },
+    {
+      "name": "Ushuaia Ibiza",
+      "insel": "Ibiza",
+      "kategorie": "club",
+      "preisniveau": 3,
+      "beschreibung": "An open-air poolside arena in Playa d'en Bossa where the headline sets run in daylight and finish by midnight.",
+      "best_time": "17:00-00:00",
+      "price_estimate": "estimate: EUR 80-150 entry, tables from EUR 2,000"
+    },
+    {
+      "name": "Hi Ibiza",
+      "insel": "Ibiza",
+      "kategorie": "club",
+      "preisniveau": 3,
+      "beschreibung": "The island's most technically equipped club, directly opposite Ushuaia and built for the after.",
+      "best_time": "23:00-06:00",
+      "price_estimate": "estimate: EUR 70-120 entry, tables from EUR 2,500"
+    },
+    {
+      "name": "Pacha Ibiza",
+      "insel": "Ibiza",
+      "kategorie": "club",
+      "preisniveau": 3,
+      "beschreibung": "The original cherry-logo room by the marina, running since 1973 and still the safest late booking.",
+      "best_time": "23:59-06:00",
+      "price_estimate": "estimate: EUR 60-100 entry, tables from EUR 1,500"
+    },
+    {
+      "name": "Formentera Day Charter",
+      "insel": "Ibiza",
+      "kategorie": "yacht",
+      "preisniveau": 3,
+      "beschreibung": "A crewed crossing to the sandbanks of Illetes with a beach lunch booked ashore.",
+      "best_time": "09:30-18:30",
+      "price_estimate": "estimate: EUR 3,000-8,000 per day for the boat"
+    },
+    {
+      "name": "Ibiza Airport Chauffeur",
+      "insel": "Ibiza",
+      "kategorie": "transfer",
+      "preisniveau": 2,
+      "beschreibung": "Private car and driver from IBZ to any villa or hotel on the island, with meet-and-greet inside the terminal.",
+      "best_time": "07:00-23:00",
+      "price_estimate": "estimate: EUR 80-180 per transfer"
+    },
+    {
+      "name": "Atzaro Estate, Sant Llorenc",
+      "insel": "Ibiza",
+      "kategorie": "villa",
+      "preisniveau": 3,
+      "beschreibung": "An orange-grove agroturismo estate inland, the calm counterweight to a week on the south coast.",
+      "best_time": "15:00-20:00",
+      "price_estimate": "estimate: EUR 1,200-6,000 per night depending on the house"
+    },
+
+    {
+      "name": "Le Club 55",
+      "insel": "St. Tropez",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "The Pampelonne original from 1955, wooden tables under the pines and a lunch service that ends when it ends.",
+      "best_time": "12:30-17:00",
+      "price_estimate": "estimate: EUR 150-300 per person"
+    },
+    {
+      "name": "Loulou Ramatuelle",
+      "insel": "St. Tropez",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "A refined Pampelonne room where the Riviera crowd goes when Club 55 feels too crowded.",
+      "best_time": "12:30-18:00",
+      "price_estimate": "estimate: EUR 180-350 per person"
+    },
+    {
+      "name": "Nikki Beach Saint-Tropez",
+      "insel": "St. Tropez",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "The loudest bed on the bay, running its signature afternoon party through the season.",
+      "best_time": "12:00-19:00",
+      "price_estimate": "estimate: EUR 200-400 per person"
+    },
+    {
+      "name": "Verde Beach",
+      "insel": "St. Tropez",
+      "kategorie": "beachclub",
+      "preisniveau": 3,
+      "beschreibung": "A Mediterranean-Levantine kitchen on Pampelonne with live acts moving through the tables at sunset.",
+      "best_time": "13:00-19:30",
+      "price_estimate": "estimate: EUR 160-320 per person"
+    },
+    {
+      "name": "La Vague d'Or, Cheval Blanc",
+      "insel": "St. Tropez",
+      "kategorie": "restaurant",
+      "preisniveau": 3,
+      "beschreibung": "The three-star table at Cheval Blanc, the most formal dinner available in the bay and booked weeks out.",
+      "best_time": "19:30-22:30",
+      "price_estimate": "estimate: EUR 350-600 per person"
+    },
+    {
+      "name": "L'Opera Saint-Tropez",
+      "insel": "St. Tropez",
+      "kategorie": "restaurant",
+      "preisniveau": 2,
+      "beschreibung": "Dinner-show dining behind the port that slides into a dancing-on-the-banquettes finish.",
+      "best_time": "20:30-01:00",
+      "price_estimate": "estimate: EUR 120-250 per person"
+    },
+    {
+      "name": "Le Girelier",
+      "insel": "St. Tropez",
+      "kategorie": "restaurant",
+      "preisniveau": 2,
+      "beschreibung": "A straightforward grilled-fish and bouillabaisse address on the old port, front row to the yacht parade.",
+      "best_time": "12:30-15:00",
+      "price_estimate": "estimate: EUR 90-170 per person"
+    },
+    {
+      "name": "Les Caves du Roy",
+      "insel": "St. Tropez",
+      "kategorie": "club",
+      "preisniveau": 3,
+      "beschreibung": "The Byblos basement, unchanged in spirit since the sixties and still the hardest door in town.",
+      "best_time": "23:30-05:00",
+      "price_estimate": "estimate: tables from EUR 2,000, no meaningful walk-in"
+    },
+    {
+      "name": "VIP Room Saint-Tropez",
+      "insel": "St. Tropez",
+      "kategorie": "club",
+      "preisniveau": 3,
+      "beschreibung": "A portside club built entirely around table service and the people watching it.",
+      "best_time": "00:00-05:00",
+      "price_estimate": "estimate: tables from EUR 1,500"
+    },
+    {
+      "name": "Gulf of Saint-Tropez Charter",
+      "insel": "St. Tropez",
+      "kategorie": "yacht",
+      "preisniveau": 3,
+      "beschreibung": "A crewed day along the Pampelonne coast with a tender drop directly at the beach clubs.",
+      "best_time": "10:00-19:00",
+      "price_estimate": "estimate: EUR 3,500-9,000 per day for the boat"
+    },
+    {
+      "name": "Nice Cote d'Azur Chauffeur & Helicopter",
+      "insel": "St. Tropez",
+      "kategorie": "transfer",
+      "preisniveau": 3,
+      "beschreibung": "Either a two-hour chauffeured run from NCE or a twenty-minute helicopter hop to La Mole.",
+      "best_time": "07:00-21:00",
+      "price_estimate": "estimate: EUR 350-600 by car, EUR 2,500-4,000 by helicopter"
+    },
+    {
+      "name": "La Reserve Ramatuelle Villas",
+      "insel": "St. Tropez",
+      "kategorie": "villa",
+      "preisniveau": 3,
+      "beschreibung": "Hillside villas above the bay with hotel service, a spa and complete separation from the port traffic.",
+      "best_time": "16:00-20:00",
+      "price_estimate": "estimate: EUR 5,000-20,000 per night"
+    }
+  ]
+}
