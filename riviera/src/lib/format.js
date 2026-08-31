@@ -19,3 +19,13 @@ export function formatStay(arrival, departure, locale = 'en-GB') {
   }
   return `${day(from)} – ${day(to)} ${month(to)} ${year(to)}`
 }
+
+/** "Saturday, 12 September" — the heading for one day of the programme. */
+export function formatDay(iso, locale = 'en-GB') {
+  return new Date(iso).toLocaleDateString(locale, {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    timeZone: 'UTC',
+  })
+}
