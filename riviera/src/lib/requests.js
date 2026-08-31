@@ -49,6 +49,7 @@ function isValid(record) {
     typeof record.arrival === 'string' &&
     typeof record.departure === 'string' &&
     Number.isInteger(record.guests) &&
+    Array.isArray(record.interests) &&
     Array.isArray(record.entries) &&
     isTotal(record.total)
   )
@@ -69,6 +70,7 @@ export function saveRequest({ brief, entries, total }) {
     departure: brief.departure,
     guests: brief.guests,
     budget: brief.budget,
+    interests: Array.isArray(brief.interests) ? brief.interests : [],
     entries: entries.map(({ time, name, kategorie, price_estimate }) => ({
       time,
       name,

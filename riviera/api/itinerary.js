@@ -10,7 +10,14 @@ const BUDGETS = {
   vip: 'VIP — front row throughout: the best beds, table service, private transfers.',
   'no-limit': 'No Limit — nothing ruled out on price.',
 }
-const CATEGORIES = ['beachclub', 'restaurant', 'club', 'yacht', 'transfer', 'villa']
+const CATEGORIES = inventoryCategories()
+
+/** The category list is the inventory's own, so the two can never drift. */
+function inventoryCategories() {
+  return [...new Set(JSON.parse(
+    readFileSync(fileURLToPath(new URL('../src/data/inventory.json', import.meta.url)), 'utf8'),
+  ).items.map((item) => item.kategorie))]
+}
 
 const inventory = JSON.parse(
   readFileSync(fileURLToPath(new URL('../src/data/inventory.json', import.meta.url)), 'utf8'),
@@ -74,12 +81,24 @@ export function validateBrief(brief) {
   if (brief.language !== undefined && !/^[a-zA-Z]{2,3}(-[a-zA-Z0-9]{2,8})*$/.test(brief.language)) {
     return 'Malformed language tag.'
   }
+  if (brief.interests !== undefined) {
+    if (!Array.isArray(brief.interests)) return 'Interests must be a list.'
+    if (brief.interests.some((id) => !CATEGORIES.includes(id))) return 'Unknown service requested.'
+  }
   return null
 }
 
 function buildPrompt(brief) {
   const days = tripDays(brief.arrival, brief.departure)
-  const venues = inventory.items.filter((item) => item.insel === DESTINATIONS[brief.destination])
+  const wanted = brief.interests?.length ? brief.interests : null
+
+  // Only what the guest asked for reaches the model. Filtering here rather
+  // than trusting the prompt means an unwanted category cannot appear at all.
+  const venues = inventory.items.filter(
+    (item) =>
+      item.insel === DESTINATIONS[brief.destination] &&
+      (!wanted || wanted.includes(item.kategorie)),
+  )
   const language = new Intl.DisplayNames(['en'], { type: 'language' }).of(brief.language || 'en')
 
   const system = [
@@ -94,6 +113,9 @@ function buildPrompt(brief) {
     '- The first day is an arrival day: start it later and open it with the transfer. The last day is a departure day: nothing after midday, and no nightlife.',
     '- Do not repeat a venue across the stay unless the stay is long enough that a return visit is genuinely the best choice.',
     `- Weight the selection towards the guests' level, but the level is a tone, not a hard filter.`,
+    wanted
+      ? `- The guests asked specifically for: ${wanted.join(', ')}. The inventory below has been narrowed to those services; build the programme from it and do not ask for anything outside it. If a day cannot reach three entries from what is available, give it fewer rather than repeating a venue twice in one day.`
+      : '- The guests named no preference, so cover the stay broadly: days on the water or the beach, dinners, a night out, and the transfers that make it work.',
     `- Write every "why" in ${language}, addressed to the guest, one sentence, concrete. Leave venue names and price estimates untranslated.`,
   ].join('\n')
 
@@ -101,6 +123,7 @@ function buildPrompt(brief) {
     'Guests: ' + brief.guests,
     'Destination: ' + DESTINATIONS[brief.destination],
     'Level: ' + BUDGETS[brief.budget],
+    'Asked for: ' + (wanted ? wanted.join(', ') : 'no preference stated'),
     'Days to plan, in order: ' + days.join(', '),
     '',
     'Inventory:',

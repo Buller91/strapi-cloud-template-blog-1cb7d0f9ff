@@ -44,3 +44,24 @@ export const budgetTiers = [
     note: 'Nothing ruled out in advance. If it can be arranged, we arrange it.',
   },
 ]
+
+/**
+ * The desk's menu of services. `id` matches `kategorie` in inventory.json,
+ * so a guest's choices filter the inventory directly.
+ *
+ * @type {{ id: string, name: string }[]}
+ */
+export const services = [
+  { id: 'beachclub', name: 'Beach & day clubs' },
+  { id: 'restaurant', name: 'Dining' },
+  { id: 'club', name: 'Nightlife' },
+  { id: 'bottle-service', name: 'VIP tables & bottle service' },
+  { id: 'yacht', name: 'Yacht & boat days' },
+  { id: 'watersports', name: 'Jet ski & watersports' },
+  { id: 'car', name: 'Cars & supercars' },
+  { id: 'transfer', name: 'Transfers & helicopter' },
+  { id: 'villa', name: 'Villas' },
+  { id: 'wellness', name: 'Spa, beauty & training' },
+  { id: 'chef', name: 'Private chef' },
+  { id: 'experience', name: 'Culture & vineyards' },
+]

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="experience">
+<defs>
+<linearGradient id="g" gradientTransform="rotate(146 .5 .5)">
+<stop offset="0" stop-color="#262320"/><stop offset="1" stop-color="#0b0a09"/>
+</linearGradient>
+<radialGradient id="w" cx="75%" cy="27%" r="62%">
+<stop offset="0" stop-color="#c2a15f" stop-opacity=".30"/>
+<stop offset="1" stop-color="#c2a15f" stop-opacity="0"/>
+</radialGradient>
+<filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3"/>
+<feColorMatrix type="saturate" values="0"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#g)"/>
+<rect width="1200" height="800" fill="url(#w)"/>
+<g transform="translate(700 250) scale(1.5)" fill="none"
+   stroke="#c2a15f" stroke-opacity=".27" stroke-width="2.5"
+   stroke-linecap="round" stroke-linejoin="round"><path d="M32 56h136M44 56v96M84 56v96M116 56v96M156 56v96M24 168h152"/></g>
+<rect width="1200" height="800" filter="url(#n)" opacity=".055"/>
+</svg>

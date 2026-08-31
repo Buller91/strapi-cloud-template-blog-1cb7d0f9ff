@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { loadRequests, combineTotals } from '../lib/requests.js'
 import { formatRange } from '../lib/price.js'
 import { formatStay } from '../lib/format.js'
-import { destinations, budgetTiers } from '../data/destinations.js'
+import { destinations, budgetTiers, services } from '../data/destinations.js'
 
 const label = (list, key, id) => list.find((entry) => entry[key] === id)?.name ?? id
 
@@ -33,6 +33,15 @@ function RequestCard({ record, locale }) {
         <Row term="Guests">{record.guests}</Row>
         <Row term="Dates">{formatStay(record.arrival, record.departure, locale)}</Row>
         <Row term="Level">{label(budgetTiers, 'id', record.budget)}</Row>
+
+        <div className="col-span-2 border-t border-line pt-5">
+          <dt className="eyebrow text-muted">Asked for</dt>
+          <dd className="text-[0.8125rem] text-bone/80 mt-1.5 leading-relaxed">
+            {record.interests.length === 0
+              ? 'A full programme — nothing ruled out'
+              : record.interests.map((id) => label(services, 'id', id)).join(' · ')}
+          </dd>
+        </div>
 
         <div className="col-span-2 border-t border-line pt-5">
           <dt className="eyebrow text-muted">Estimated volume</dt>

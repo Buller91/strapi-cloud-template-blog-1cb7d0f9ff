@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { destinations, budgetTiers } from '../data/destinations.js'
+import { destinations, budgetTiers, services } from '../data/destinations.js'
 import Section from '../components/Section.jsx'
 import ChoiceCard from '../components/ChoiceCard.jsx'
+import ServiceChip from '../components/ServiceChip.jsx'
 import Stepper from '../components/Stepper.jsx'
 import DateField from '../components/DateField.jsx'
 
@@ -37,6 +38,7 @@ export default function Start({ onSubmit }) {
     departure: '',
     guests: 2,
     budget: '',
+    interests: [],
   })
   const [showErrors, setShowErrors] = useState(false)
 
@@ -45,6 +47,13 @@ export default function Start({ onSubmit }) {
   const errors = validate(brief)
   const visible = showErrors ? errors : {}
   const stay = nights(brief.arrival, brief.departure)
+
+  const toggleService = (id) =>
+    set({
+      interests: brief.interests.includes(id)
+        ? brief.interests.filter((entry) => entry !== id)
+        : [...brief.interests, id],
+    })
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -142,6 +151,30 @@ export default function Start({ onSubmit }) {
               />
             ))}
           </div>
+        </Section>
+
+        <Section
+          index="05"
+          title="What do you want to do?"
+          hint="Choose as many as you like. Leave it empty and we will propose a full programme."
+        >
+          <div className="grid gap-3 sm:grid-cols-2">
+            {services.map((service) => (
+              <ServiceChip
+                key={service.id}
+                name="interests"
+                label={service.name}
+                checked={brief.interests.includes(service.id)}
+                onChange={() => toggleService(service.id)}
+              />
+            ))}
+          </div>
+
+          {brief.interests.length > 0 && (
+            <p className="text-[0.8125rem] text-muted mt-6">
+              {brief.interests.length} chosen. Everything else stays off the programme.
+            </p>
+          )}
         </Section>
 
         <div className="pt-4">

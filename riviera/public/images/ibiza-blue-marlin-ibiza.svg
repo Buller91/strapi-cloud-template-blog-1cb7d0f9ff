@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="beachclub">
+<defs>
+<linearGradient id="g" gradientTransform="rotate(159 .5 .5)">
+<stop offset="0" stop-color="#3a2f1e"/><stop offset="1" stop-color="#0b0a09"/>
+</linearGradient>
+<radialGradient id="w" cx="70%" cy="24%" r="62%">
+<stop offset="0" stop-color="#c2a15f" stop-opacity=".30"/>
+<stop offset="1" stop-color="#c2a15f" stop-opacity="0"/>
+</radialGradient>
+<filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3"/>
+<feColorMatrix type="saturate" values="0"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#g)"/>
+<rect width="1200" height="800" fill="url(#w)"/>
+<g transform="translate(700 220) scale(1.8)" fill="none"
+   stroke="#c2a15f" stroke-opacity=".27" stroke-width="2.5"
+   stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="96" r="42"/><path d="M20 150h160M44 52 30 38M156 52l14-14"/></g>
+<rect width="1200" height="800" filter="url(#n)" opacity=".055"/>
+</svg>
