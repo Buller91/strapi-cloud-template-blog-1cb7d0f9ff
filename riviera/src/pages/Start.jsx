@@ -78,6 +78,13 @@ export default function Start({ onSubmit }) {
           Four questions. We come back with a private programme for Mykonos,
           Ibiza or St.&nbsp;Tropez — held, not merely suggested.
         </p>
+        <img
+          src="/images/hero.svg"
+          alt=""
+          width="1200"
+          height="500"
+          className="mt-12 block aspect-[12/5] w-full object-cover sm:mt-16"
+        />
       </header>
 
       <form onSubmit={handleSubmit} noValidate className="mt-20 space-y-20 sm:mt-28 sm:space-y-24">
@@ -91,6 +98,7 @@ export default function Start({ onSubmit }) {
                 checked={brief.destination === d.slug}
                 onChange={(value) => set({ destination: value })}
                 title={d.name}
+                image={d.image}
                 meta={d.region}
                 note={d.note}
               />

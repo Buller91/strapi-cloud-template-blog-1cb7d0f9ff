@@ -8,18 +8,21 @@
 export const destinations = [
   {
     slug: 'mykonos',
+    image: '/images/destination-mykonos.svg',
     name: 'Mykonos',
     region: 'Cyclades, Greece',
     note: 'Long lunches, late rooms.',
   },
   {
     slug: 'ibiza',
+    image: '/images/destination-ibiza.svg',
     name: 'Ibiza',
     region: 'Balearics, Spain',
     note: 'The music, and the quiet north.',
   },
   {
     slug: 'st-tropez',
+    image: '/images/destination-st-tropez.svg',
     name: 'St. Tropez',
     region: 'Côte d’Azur, France',
     note: 'Pampelonne, from noon onward.',

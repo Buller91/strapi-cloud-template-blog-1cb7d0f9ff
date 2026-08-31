@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 525" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice">
 <defs>
 <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
 <stop offset="0" stop-color="#22384a"/>
@@ -22,12 +22,12 @@
 <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3"/>
 <feColorMatrix type="saturate" values="0"/></filter>
 </defs>
-<rect width="1200" height="305" fill="url(#sky)"/>
-<circle cx="792" cy="275" r="98" fill="url(#sun)"/>
-<rect y="305" width="1200" height="220" fill="url(#ground)"/>
-<ellipse cx="792" cy="315" rx="68.6" ry="147" fill="url(#sun)" opacity=".5"/>
-<g fill="#0b0a09" fill-opacity=".82"><path d="M180 305 q0 -70 90 -70 q90 0 90 70z" /><rect x="266" y="305" width="7" height="495"/>
-               <path d="M840 335 q0 -58 74 -58 q74 0 74 58z"/><rect x="910" y="335" width="6" height="465"/></g>
-<rect width="1200" height="525" fill="url(#vig)"/>
-<rect width="1200" height="525" filter="url(#grain)" opacity=".05"/>
+<rect width="1200" height="261" fill="url(#sky)"/>
+<circle cx="852" cy="231" r="97" fill="url(#sun)"/>
+<rect y="261" width="1200" height="189" fill="url(#ground)"/>
+<ellipse cx="852" cy="271" rx="67.89999999999999" ry="145.5" fill="url(#sun)" opacity=".5"/>
+<g fill="#0b0a09" fill-opacity=".82"><path d="M180 261 q0 -70 90 -70 q90 0 90 70z" /><rect x="266" y="261" width="7" height="539"/>
+               <path d="M840 291 q0 -58 74 -58 q74 0 74 58z"/><rect x="910" y="291" width="6" height="509"/></g>
+<rect width="1200" height="450" fill="url(#vig)"/>
+<rect width="1200" height="450" filter="url(#grain)" opacity=".05"/>
 </svg>

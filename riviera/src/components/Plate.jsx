@@ -17,7 +17,7 @@ export default function Plate({ visual, alt, dimmed }) {
         src={failed ? visual.plate : visual.src}
         alt={showingPhoto ? alt : ''}
         width="1200"
-        height="800"
+        height="525"
         loading="lazy"
         onError={() => setFailed(true)}
         className={[

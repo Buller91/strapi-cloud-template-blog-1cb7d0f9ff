@@ -1,19 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="chef">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 525" preserveAspectRatio="xMidYMid slice">
 <defs>
-<linearGradient id="g" gradientTransform="rotate(138 .5 .5)">
-<stop offset="0" stop-color="#2c2118"/><stop offset="1" stop-color="#0b0a09"/>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#291d17"/>
+<stop offset=".62" stop-color="#291d17" stop-opacity=".55"/>
+<stop offset="1" stop-color="#d4884a"/>
 </linearGradient>
-<radialGradient id="w" cx="24%" cy="31%" r="62%">
-<stop offset="0" stop-color="#c2a15f" stop-opacity=".30"/>
-<stop offset="1" stop-color="#c2a15f" stop-opacity="0"/>
+<linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#d4884a" stop-opacity=".85"/>
+<stop offset=".35" stop-color="#1e1612"/>
+<stop offset="1" stop-color="#0b0a09"/>
+</linearGradient>
+<radialGradient id="sun" cx="50%" cy="50%" r="50%">
+<stop offset="0" stop-color="#ffcd90"/>
+<stop offset=".45" stop-color="#ffcd90" stop-opacity=".45"/>
+<stop offset="1" stop-color="#ffcd90" stop-opacity="0"/>
 </radialGradient>
-<filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3"/>
+<radialGradient id="vig" cx="50%" cy="46%" r="72%">
+<stop offset=".55" stop-color="#0b0a09" stop-opacity="0"/>
+<stop offset="1" stop-color="#0b0a09" stop-opacity=".72"/>
+</radialGradient>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3"/>
 <feColorMatrix type="saturate" values="0"/></filter>
 </defs>
-<rect width="1200" height="800" fill="url(#g)"/>
-<rect width="1200" height="800" fill="url(#w)"/>
-<g transform="translate(240 210) scale(1.9)" fill="none"
-   stroke="#c2a15f" stroke-opacity=".27" stroke-width="2.5"
-   stroke-linecap="round" stroke-linejoin="round"><path d="M40 132a60 60 0 0 1 120 0zM24 148h152M100 60v12"/></g>
-<rect width="1200" height="800" filter="url(#n)" opacity=".055"/>
+<rect width="1200" height="357" fill="url(#sky)"/>
+<circle cx="336" cy="327" r="108" fill="url(#sun)"/>
+<rect y="357" width="1200" height="168" fill="url(#ground)"/>
+<ellipse cx="336" cy="367" rx="75.6" ry="162" fill="url(#sun)" opacity=".5"/>
+<g fill="#0b0a09" fill-opacity=".82"><rect x="150" y="453" width="900" height="18" rx="6"/><rect x="230" y="471" width="14" height="329"/>
+            <rect x="956" y="471" width="14" height="329"/>
+            <path d="M600 453 v-70 h44 v70z"/><path d="M614 383 q8 -34 16 0z"/></g>
+<rect width="1200" height="525" fill="url(#vig)"/>
+<rect width="1200" height="525" filter="url(#grain)" opacity=".05"/>
 </svg>
