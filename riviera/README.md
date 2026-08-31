@@ -31,6 +31,20 @@ at `/api/itinerary`, so `npm run dev` behaves like production. On Vercel the
 file is picked up as a serverless function with no extra configuration; on
 another host, run it behind any Node endpoint that speaks `(req, res)`.
 
+## The desk view
+
+`/admin` lists every request raised **in that browser**: reference, island,
+dates, party size, the selected arrangements and the estimated volume, plus a
+combined figure across all of them.
+
+It is not a shared inbox. Requests are held in `localStorage`, so a request
+made on a guest's phone never reaches the desk's laptop, and clearing site
+data erases them. The page says this on itself. A real inbox needs somewhere
+to post requests to.
+
+Routing uses real paths, so any host must fall back to `index.html` for
+unknown routes; `vercel.json` does that while leaving `/api` alone.
+
 ## Editing the inventory
 
 `src/data/inventory.json` holds every bookable venue, twelve per island. The
