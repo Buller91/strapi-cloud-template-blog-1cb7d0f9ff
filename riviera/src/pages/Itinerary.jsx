@@ -1,21 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { requestItinerary, guestLanguage } from '../lib/itinerary.js'
-import { formatStay, formatDay } from '../lib/format.js'
+import { sumEstimates } from '../lib/price.js'
+import { formatStay } from '../lib/format.js'
 import { destinations, budgetTiers } from '../data/destinations.js'
+import DayCard from '../components/DayCard.jsx'
+import SelectionBar from '../components/SelectionBar.jsx'
+import Spinner from '../components/Spinner.jsx'
 
 const label = (list, key, id) => list.find((entry) => entry[key] === id)?.name ?? id
-
-function Composing() {
-  return (
-    <div className="py-24" role="status">
-      <p className="eyebrow text-gold animate-pulse">Composing</p>
-      <p className="font-display text-[1.75rem] font-light mt-6 text-bone/70">
-        We are putting your days in order.
-      </p>
-      <p className="text-[0.8125rem] text-muted mt-3">This takes a moment.</p>
-    </div>
-  )
-}
+const keyOf = (date, index) => `${date}#${index}`
 
 function Failed({ message, onRetry }) {
   return (
@@ -36,23 +29,9 @@ function Failed({ message, onRetry }) {
   )
 }
 
-function Entry({ item }) {
-  return (
-    <li className="grid grid-cols-[3.5rem_1fr] gap-x-5 gap-y-1 border-t border-line py-6 sm:grid-cols-[5rem_1fr]">
-      <span className="eyebrow text-gold/80 pt-2 tabular-nums">{item.time}</span>
-
-      <div>
-        <p className="eyebrow text-muted">{item.kategorie}</p>
-        <h3 className="font-display text-[1.5rem] font-light leading-tight mt-1">{item.name}</h3>
-        <p className="text-[0.8125rem] text-muted mt-3 leading-relaxed">{item.why}</p>
-        <p className="text-[0.75rem] text-muted/70 mt-2 italic">{item.price_estimate}</p>
-      </div>
-    </li>
-  )
-}
-
-export default function Itinerary({ brief, onEdit }) {
+export default function Itinerary({ brief, onEdit, onRequest }) {
   const [state, setState] = useState({ status: 'loading' })
+  const [selected, setSelected] = useState(() => new Set())
   const [attempt, setAttempt] = useState(0)
   const locale = guestLanguage()
 
@@ -61,7 +40,11 @@ export default function Itinerary({ brief, onEdit }) {
     setState({ status: 'loading' })
 
     requestItinerary(brief, { signal: controller.signal })
-      .then((result) => setState({ status: 'ready', ...result }))
+      .then((result) => {
+        setState({ status: 'ready', ...result })
+        // The desk proposed the programme; the guest curates it down.
+        setSelected(new Set(result.days.flatMap((day) => day.items.map((_, i) => keyOf(day.date, i)))))
+      })
       .catch((error) => {
         if (error.name === 'AbortError') return
         setState({ status: 'failed', message: error.message })
@@ -70,8 +53,23 @@ export default function Itinerary({ brief, onEdit }) {
     return () => controller.abort()
   }, [brief, attempt])
 
+  const toggle = (date, index) =>
+    setSelected((prev) => {
+      const next = new Set(prev)
+      const key = keyOf(date, index)
+      next.has(key) ? next.delete(key) : next.add(key)
+      return next
+    })
+
+  const chosen = useMemo(() => {
+    if (state.status !== 'ready') return []
+    return state.days.flatMap((day) => day.items.filter((_, i) => selected.has(keyOf(day.date, i))))
+  }, [state, selected])
+
+  const total = useMemo(() => sumEstimates(chosen, brief.guests), [chosen, brief.guests])
+
   return (
-    <main className="mx-auto max-w-2xl px-6 pb-32 sm:px-10">
+    <main className={`mx-auto max-w-2xl px-6 sm:px-10 ${state.status === 'ready' ? 'pb-44' : 'pb-32'}`}>
       <header className="pt-14 sm:pt-24">
         <p className="eyebrow text-gold">Your programme</p>
 
@@ -96,30 +94,37 @@ export default function Itinerary({ brief, onEdit }) {
         </button>
       </header>
 
-      {state.status === 'loading' && <Composing />}
+      {state.status === 'loading' && (
+        <div className="flex flex-col items-center py-32 text-center">
+          <Spinner label="Composing your programme" />
+          <p className="text-[0.8125rem] text-muted mt-8">Composing your days.</p>
+        </div>
+      )}
+
       {state.status === 'failed' && <Failed message={state.message} onRetry={() => setAttempt((n) => n + 1)} />}
 
       {state.status === 'ready' && (
-        <div className="mt-20 space-y-20 sm:mt-24">
-          {state.days.map((day) => (
-            <section key={day.date}>
-              <div aria-hidden="true" className="flex items-baseline gap-4">
-                <span className="eyebrow text-gold/70">{formatDay(day.date, locale)}</span>
-                <span className="h-px flex-1 bg-line" />
-              </div>
+        <>
+          <div className="mt-16 space-y-6 sm:mt-20">
+            {state.days.map((day, index) => (
+              <DayCard
+                key={day.date}
+                date={day.date}
+                items={day.items}
+                index={index}
+                locale={locale}
+                isSelected={(date, i) => selected.has(keyOf(date, i))}
+                onToggle={toggle}
+              />
+            ))}
+          </div>
 
-              <ul className="mt-6">
-                {day.items.map((item, index) => (
-                  <Entry key={`${day.date}-${index}`} item={item} />
-                ))}
-              </ul>
-            </section>
-          ))}
-
-          <footer className="border-t border-line pt-8 space-y-3">
+          <footer className="mt-12 space-y-3">
             <p className="text-[0.75rem] text-muted leading-relaxed">
-              Every price is an estimate, not a quote. Nothing above is booked until the
-              desk confirms it.
+              The total is indicative for {brief.guests}{' '}
+              {brief.guests === 1 ? 'guest' : 'guests'}, with each entry counted once at
+              its own unit. Every price is an estimate, not a quote, and nothing above is
+              booked until the desk confirms it.
             </p>
 
             {state.unknown.length > 0 && (
@@ -128,7 +133,14 @@ export default function Itinerary({ brief, onEdit }) {
               </p>
             )}
           </footer>
-        </div>
+
+          <SelectionBar
+            total={total}
+            count={chosen.length}
+            locale={locale}
+            onRequest={() => onRequest(chosen, total)}
+          />
+        </>
       )}
     </main>
   )
