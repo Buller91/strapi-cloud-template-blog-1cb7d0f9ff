@@ -6,8 +6,10 @@
 import { spawn, spawnSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = path.resolve(import.meta.dirname, "..");
+// fileURLToPath statt import.meta.dirname: funktioniert auch mit älteren Node-Versionen
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
 const PORT = Number(args.find((a) => a.startsWith("--port="))?.split("=")[1] ?? 3000);
 const APP = `http://localhost:${PORT}`;

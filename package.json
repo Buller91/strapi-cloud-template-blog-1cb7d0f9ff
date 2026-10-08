@@ -4,6 +4,7 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
+    "lokal": "cd cockpit && npm run lokal",
     "build": "strapi build",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
