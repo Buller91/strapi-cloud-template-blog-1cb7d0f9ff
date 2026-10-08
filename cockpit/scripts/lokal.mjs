@@ -40,16 +40,18 @@ step("Starte Datenbank (beim ersten Mal lädt Docker einige Minuten lang Images)
 if (run("npx", [...SUPABASE, "start", "-x", EXCLUDE], { stdio: "inherit" }).status !== 0) {
   fail("Supabase konnte nicht starten. Läuft Docker? Mit «npx supabase stop» aufräumen und erneut versuchen.");
 }
+// Windows liefert \r\n; vor dem Auswerten auf \n vereinheitlichen
+const lf = (t) => t.replace(/\r\n?/g, "\n");
 const status = run("npx", [...SUPABASE, "status", "-o", "env"], { encoding: "utf8" });
 const sb = Object.fromEntries(
-  [...(status.stdout ?? "").matchAll(/^([A-Z_]+)="?([^"\n]*)"?$/gm)].map((m) => [m[1], m[2]]),
+  [...lf(status.stdout ?? "").matchAll(/^([A-Z_]+)="?([^"\n]*)"?$/gm)].map((m) => [m[1], m[2]]),
 );
 if (!sb.API_URL || !sb.ANON_KEY || !sb.SERVICE_ROLE_KEY) fail("Supabase-Zugangsdaten nicht gefunden (supabase status).");
 
 // 3. .env.local schreiben (bestehende Werte wie ANTHROPIC_API_KEY bleiben erhalten)
 step("Schreibe .env.local …");
 const envFile = path.join(ROOT, ".env.local");
-const current = existsSync(envFile) ? readFileSync(envFile, "utf8") : readFileSync(path.join(ROOT, ".env.example"), "utf8");
+const current = lf(existsSync(envFile) ? readFileSync(envFile, "utf8") : readFileSync(path.join(ROOT, ".env.example"), "utf8"));
 const values = Object.fromEntries([...current.matchAll(/^([A-Z_]+)=(.*)$/gm)].map((m) => [m[1], m[2]]));
 const forced = {
   NEXT_PUBLIC_SUPABASE_URL: sb.API_URL,
@@ -129,7 +131,7 @@ async function seed(owner) {
     x.setUTCDate(x.getUTCDate() + d);
     return x.toISOString().slice(0, 10);
   };
-  const csv = readFileSync(path.join(ROOT, "docs/beispiel-import.csv"), "utf8").trim().split("\n").slice(1);
+  const csv = lf(readFileSync(path.join(ROOT, "docs/beispiel-import.csv"), "utf8")).trim().split("\n").slice(1);
   const kanaele = ["ausgehend", "ausgehend", "ausgehend", "seo", "empfehlung", "ausgehend", "social"];
   const rows = csv.map((line, i) => {
     const [name, ort, kanton, branche, groesse, website, kontakt, funktion, mail] = line.split(";");
