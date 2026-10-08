@@ -11,35 +11,40 @@ Stand: **Woche 1 (Tag 1–3)** umgesetzt. Plan, Annahmen und offene Punkte: [`do
 
 Next.js 15 (App Router, Server Actions) · TypeScript · Tailwind 4 · Supabase (Postgres, Auth mit Magic Link + TOTP, RLS) · Anthropic API
 
-## Lokal starten
+## Lokal starten (ein Befehl)
 
-Voraussetzungen: Node 20+, Docker, [Supabase CLI](https://supabase.com/docs/guides/cli).
+Voraussetzungen: [Node.js 20+](https://nodejs.org) und [Docker Desktop](https://www.docker.com/products/docker-desktop/) (gestartet).
 
 ```bash
 cd cockpit
-npm install
-supabase start            # startet Postgres, Auth, Studio, Inbucket (lokale Mails)
-supabase db reset         # spielt supabase/migrations ein
-cp .env.example .env.local
+npm run lokal
 ```
 
-In `.env.local` eintragen:
+Das Skript (`scripts/lokal.mjs`) erledigt alles Weitere:
 
-- `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` aus `supabase status`
-- `ALLOWED_EMAIL` – die eine Adresse, die sich anmelden darf
-- `ANTHROPIC_API_KEY`, optional `ANTHROPIC_MODEL` (Standard `claude-opus-5-5`)
-- `SENDER_*` – Absenderangaben, werden in jeden Entwurf eingesetzt
-- `OFFER_TEXT` – Einstiegsangebot (Sichtbarkeits-Check)
+1. installiert die Abhängigkeiten (beim ersten Mal),
+2. startet die lokale Datenbank (beim ersten Mal lädt Docker einige Minuten lang),
+3. schreibt `.env.local` (bestehende Werte wie `ANTHROPIC_API_KEY` bleiben erhalten),
+4. legt deinen Nutzer (`ALLOWED_EMAIL`) und 30 erfundene Demo-Betriebe in verschiedenen Pipeline-Stufen an,
+5. startet die App und öffnet den Browser **direkt angemeldet** unter http://localhost:3000/auth/dev-login.
 
-Nutzer einmalig anlegen (Selbstregistrierung ist abgeschaltet): Studio http://127.0.0.1:54323 → Authentication → *Add user* → *Send magic link* bzw. *Create user* mit derselben Adresse wie `ALLOWED_EMAIL`.
+Beenden mit `Ctrl+C`. Die Datenbank läuft weiter (`npx supabase stop` zum Stoppen); Daten bleiben erhalten.
+Ohne Beispieldaten: `npm run lokal -- --ohne-demo`. Alles zurücksetzen: `npx supabase db reset`.
+
+Für Recherche und Entwürfe mit Claude in `.env.local` noch `ANTHROPIC_API_KEY` und die `SENDER_*`-Angaben eintragen und neu starten.
+
+**Direktanmeldung nur lokal:** `/auth/dev-login` meldet ohne Mail und ohne Authenticator-App an (inkl. zweitem Faktor, dessen Geheimnis in `.dev-totp-secret` liegt). Die Route ist nur aktiv mit `DEV_LOGIN=1`, im Entwicklungsmodus und bei Aufruf über `localhost`; im Produktivbetrieb (`next start`, Vercel) antwortet sie mit 404.
+
+### Manuell (ohne Skript)
 
 ```bash
-npm run dev               # http://localhost:3000
+npm install
+npx supabase start
+cp .env.example .env.local   # Werte aus «npx supabase status» eintragen
+npm run dev
 ```
 
-Anmeldung: Adresse eingeben → Link aus Inbucket (http://127.0.0.1:54324) öffnen → beim ersten Mal QR-Code mit Authenticator-App scannen → Code eingeben. Ohne zweiten Faktor liefert die Datenbank keine Daten (RLS verlangt `aal2`).
-
-Zum Ausprobieren: `docs/beispiel-import.csv` (30 erfundene Betriebe) unter *Zielfirmen → CSV-Import*.
+Nutzer im Supabase Studio (http://127.0.0.1:54323) anlegen, dann unter http://localhost:3000 mit Magic Link (Mail in http://127.0.0.1:54324) und Authenticator-App anmelden.
 
 ## Tests
 

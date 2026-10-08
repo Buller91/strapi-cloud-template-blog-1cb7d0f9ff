@@ -1,4 +1,4 @@
-> **Cybershark Akquise-Cockpit:** siehe [`cockpit/README.md`](cockpit/README.md). Der Rest dieses Repositorys ist die ursprüngliche Strapi-Vorlage.
+> **Cybershark Super Intelligence (Akquise-Cockpit):** lokal starten mit `cd cockpit && npm run lokal` (Node.js und Docker Desktop nötig). Details: [`cockpit/README.md`](cockpit/README.md). Der Rest dieses Repositorys ist die ursprüngliche Strapi-Vorlage.
 
 # 🚀 Getting started with Strapi
 

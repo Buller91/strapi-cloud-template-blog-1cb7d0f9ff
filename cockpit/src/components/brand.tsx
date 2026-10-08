@@ -8,7 +8,8 @@ export function Brand({ size = "sm" }: { size?: "sm" | "lg" }) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/logo.png" alt="" className={lg ? "h-12 w-auto" : "h-8 w-auto"} />
       <span className={`font-display font-extrabold leading-tight tracking-tight ${lg ? "text-xl" : "text-sm sm:text-base"}`}>
-        Cybershark <span className="text-accent">Super Intelligence</span>
+        <span className="block">Cybershark</span>
+        <span className="block whitespace-nowrap text-accent">Super Intelligence</span>
       </span>
     </span>
   );
