@@ -18,11 +18,22 @@ const SUPABASE = ["-y", "supabase@2.40.7"];
 const EXCLUDE = "studio,imgproxy,storage-api,realtime,edge-runtime,logflare,vector,supavisor,postgres-meta,mailpit";
 
 const step = (t) => console.log(`\n\x1b[32m▸\x1b[0m ${t}`);
+// Fehler als verständliche Meldung ausgeben. Kein process.exit(): das löst unter
+// Windows mit Node 24 einen libuv-Absturz aus, solange Netzwerkverbindungen offen sind.
+class Abbruch extends Error {}
 const fail = (t) => {
-  console.error(`\n\x1b[31m✗ ${t}\x1b[0m\n`);
-  process.exit(1);
+  throw new Abbruch(t);
 };
-const run = (cmd, a, opts = {}) => spawnSync(cmd, a, { cwd: ROOT, shell: process.platform === "win32", ...opts });
+process.on("uncaughtException", (e) => {
+  process.exitCode = 1;
+  if (e instanceof Abbruch) console.error(`\n\x1b[31m✗ ${e.message}\x1b[0m\n`);
+  else console.error(`\n\x1b[31m✗ Unerwarteter Fehler:\x1b[0m ${e.message}\n\nBitte einen Screenshot dieser Meldung an Claude schicken.\n`);
+});
+const WIN = process.platform === "win32";
+// Windows braucht eine Shell für npm/npx; dann als ein Befehl übergeben (sonst Warnung DEP0190).
+// Alle Argumente stammen aus diesem Skript, nicht aus Benutzereingaben.
+const run = (cmd, a, opts = {}) =>
+  WIN ? spawnSync([cmd, ...a].join(" "), { cwd: ROOT, shell: true, ...opts }) : spawnSync(cmd, a, { cwd: ROOT, ...opts });
 
 // 1. Voraussetzungen
 const [major] = process.versions.node.split(".").map(Number);
@@ -79,6 +90,10 @@ async function api(url, method = "GET", body) {
   if (!r.ok) throw Object.assign(new Error(`${method} ${url}: ${t}`), { status: r.status, body: j });
   return j;
 }
+// Tabellen prüfen. Wurde der allererste Start unterbrochen, existiert die Datenbank
+// ohne Tabellen; Supabase spielt Migrationen nur beim ersten Start ein.
+await ensureSchema();
+
 step(`Lege Nutzer ${email} an …`);
 let userId;
 try {
@@ -101,7 +116,9 @@ if (!args.includes("--ohne-demo") && existing.length === 0) {
 
 // 6. App starten und Browser öffnen
 step(`Starte App auf ${APP} …`);
-const next = spawn("npx", ["next", "dev", "-p", String(PORT)], { cwd: ROOT, stdio: "inherit", shell: process.platform === "win32" });
+const next = WIN
+  ? spawn(`npx next dev -p ${PORT}`, { cwd: ROOT, stdio: "inherit", shell: true })
+  : spawn("npx", ["next", "dev", "-p", String(PORT)], { cwd: ROOT, stdio: "inherit" });
 const stop = () => {
   next.kill();
   console.log("\nApp beendet. Die Datenbank läuft weiter; stoppen mit: npx supabase stop");
@@ -123,6 +140,28 @@ const opener = process.platform === "darwin" ? ["open", [loginUrl]] : process.pl
 spawn(opener[0], opener[1], { stdio: "ignore", detached: true }).on("error", () => {}).unref();
 
 // ---------------------------------------------------------------------------
+
+async function ensureSchema() {
+  const DB_CONTAINER = "supabase_db_cybershark-cockpit";
+  for (let attempt = 0; attempt < 10; attempt++) {
+    try {
+      await api("/rest/v1/accounts?select=id&limit=1");
+      return;
+    } catch (e) {
+      if (e.body?.code !== "PGRST205") throw e;
+    }
+    if (attempt === 0) {
+      step("Datenbank-Tabellen fehlen, spiele sie ein …");
+      if (run("npx", [...SUPABASE, "migration", "up", "--local"], { stdio: "inherit" }).status !== 0) {
+        fail("Tabellen konnten nicht angelegt werden. Alles zurücksetzen mit: npx supabase db reset (löscht lokale Daten)");
+      }
+    }
+    // Schnittstelle soll die neuen Tabellen sofort kennen
+    run("docker", ["exec", DB_CONTAINER, "psql", "-U", "postgres", "-c", WIN ? `"NOTIFY pgrst, 'reload schema'"` : "NOTIFY pgrst, 'reload schema'"], { stdio: "ignore" });
+    await new Promise((r) => setTimeout(r, 1500));
+  }
+  fail("Die Datenbank-Tabellen sind nicht erreichbar. Alles zurücksetzen mit: npx supabase db reset (löscht lokale Daten)");
+}
 
 async function seed(owner) {
   const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Zurich" }).format(new Date());
