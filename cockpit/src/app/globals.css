@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Akzent: Grün von cybershark.ch – Platzhalterwert, bitte durch den echten Farbwert ersetzen */
+@theme {
+  --color-bg: #0a0a0a;
+  --color-fg: #f2f2f2;
+  --color-card: #141414;
+  --color-line: #262626;
+  --color-muted: #9a9a9a;
+  --color-accent: #2bd97c;
+  --color-accent-fg: #0a0a0a;
+  --color-danger: #ff5c5c;
+  --color-warn: #f5c451;
+  --font-display: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+@layer components {
+  .card { @apply rounded-lg border border-line bg-card p-4; }
+  .label { @apply font-mono text-[11px] uppercase tracking-wider text-muted; }
+  .input {
+    @apply w-full rounded-md border border-line bg-bg px-3 py-2 text-sm text-fg placeholder:text-muted/60
+      focus:border-accent focus:outline-none;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line px-3 py-2 text-sm font-medium
+      text-fg hover:border-fg/40 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply border-accent bg-accent text-accent-fg hover:border-accent hover:brightness-110; }
+  .btn-danger { @apply border-danger/60 text-danger hover:border-danger; }
+  .btn-sm { @apply px-2 py-1 text-xs; }
+  .num { @apply font-mono tabular-nums; }
+  .link { @apply text-accent underline-offset-2 hover:underline; }
+}

@@ -1,0 +1,49 @@
+# Lokale Supabase-Konfiguration (supabase start). Nur die für das Cockpit relevanten Werte.
+project_id = "cybershark-cockpit"
+
+[api]
+port = 54321
+schemas = ["public"]
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+port = 54323
+
+[inbucket]
+# Lokale Mails (Magic Links) unter http://127.0.0.1:54324
+port = 54324
+
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+# Keine Selbstregistrierung. Der eine Nutzer wird einmalig im Studio angelegt.
+enable_signup = false
+jwt_expiry = 3600
+
+[auth.email]
+enable_signup = false
+otp_expiry = 900
+
+[auth.mfa]
+max_enrolled_factors = 3
+
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true
+
+# Nicht benötigt
+[realtime]
+enabled = false
+ip_version = "IPv4"
+
+[storage]
+enabled = false
+
+[edge_runtime]
+enabled = false
+
+[analytics]
+enabled = false
