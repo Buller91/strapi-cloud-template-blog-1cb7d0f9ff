@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-/* Akzent: Grün von cybershark.ch – Platzhalterwert, bitte durch den echten Farbwert ersetzen */
+/* Akzent: Grün aus dem Cybershark-Logo */
 @theme {
   --color-bg: #0a0a0a;
   --color-fg: #f2f2f2;
   --color-card: #141414;
   --color-line: #262626;
   --color-muted: #9a9a9a;
-  --color-accent: #2bd97c;
+  --color-accent: #b6ffb3;
   --color-accent-fg: #0a0a0a;
   --color-danger: #ff5c5c;
   --color-warn: #f5c451;

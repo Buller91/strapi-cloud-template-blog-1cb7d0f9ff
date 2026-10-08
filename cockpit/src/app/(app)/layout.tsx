@@ -2,6 +2,7 @@
 export const dynamic = "force-dynamic";
 
 import Link from "next/link";
+import { Brand } from "@/components/brand";
 import { NavLinks } from "@/components/nav";
 import { signOut } from "../login/actions";
 
@@ -10,9 +11,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <div className="mx-auto max-w-7xl px-4 pb-16">
       <header className="sticky top-0 z-10 -mx-4 mb-6 border-b border-line bg-bg/95 px-4 py-3 backdrop-blur">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" aria-label="Startseite">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="Cybershark" className="h-7 w-auto" />
+          <Link href="/" aria-label="Cybershark Super Intelligence – Startseite">
+            <Brand />
           </Link>
           <form action={signOut}>
             <button className="text-xs text-muted hover:text-fg">Abmelden</button>

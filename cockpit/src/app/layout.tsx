@@ -3,9 +3,11 @@ import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import { APP_NAME } from "@/components/brand";
 
 export const metadata: Metadata = {
-  title: "Cybershark Cockpit",
+  title: APP_NAME,
+  applicationName: APP_NAME,
   robots: { index: false, follow: false },
 };
 

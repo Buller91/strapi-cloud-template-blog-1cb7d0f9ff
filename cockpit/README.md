@@ -1,4 +1,6 @@
-# Cybershark Akquise-Cockpit (Phase 1)
+# Cybershark Super Intelligence (Phase 1)
+
+Akquise-Cockpit von Cybershark.
 
 Internes Werkzeug für einen Nutzer: Zielfirmen, Recherche mit Claude, Nachrichtenentwürfe, Pipeline, Nachfassen, Funnel-Dashboard.
 **Das Werkzeug versendet nichts.** Es schreibt Entwürfe; geprüft, kopiert und verschickt wird aus dem eigenen Postfach oder LinkedIn.
